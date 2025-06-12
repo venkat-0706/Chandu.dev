@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
 
   
-<audio id="voicePlayer" style="display: none;">
-  <source src="https://res.cloudinary.com/dhmixzenl/video/upload/f_mp3/v1747964482/1747961834114897514d885t2dn-voicemaker.in-speech_bbm7yq.mp3" type="audio/mpeg">
-</audio>
+
 
 <script>
   window.addEventListener('load', () => {
@@ -36,6 +34,29 @@
   });
 </script>
 
+
+ <script>
+    // Store original title and favicon
+    var originalTitle = document.title;
+    var originalFavicon = "favicon.ico";
+    var attentionFavicon = "attention.ico"; // You must provide this icon
+    var favicon = document.getElementById("favicon");
+    var blinkInterval;
+
+    // Detect when tab is hidden or visible
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        document.title = "😢 Please visit my portfolio!";
+        blinkInterval = setInterval(() => {
+          favicon.href = (favicon.href.includes(originalFavicon)) ? attentionFavicon : originalFavicon;
+        }, 800);
+      } else {
+        document.title = originalTitle;
+        clearInterval(blinkInterval);
+        favicon.href = originalFavicon;
+      }
+    });
+  </script>
 
 
   <!-- AOS & JS -->
@@ -405,7 +426,7 @@
 
 <p data-aos="fade-up" data-aos-delay="0">
   <span class="typing-text" data-phrases='[
-      "Aspiring Software Developer",
+      "Aspiring Software Developerr",
       "Front-End Developerr",
       "AI & ML Enthusiastt",
       "Data Analystt"
@@ -747,12 +768,14 @@ body {
 <script>
   AOS.init({ once: false });
 
-  const img1 = document.getElementById('img1');
-  const img2 = document.getElementById('img2');
+  const containers = [
+    document.getElementById('img1'),
+    document.getElementById('img2')
+  ];
 
   const imageUrls = [
-    "https://res.cloudinary.com/dhmixzenl/image/upload/v1747665179/pooo_ry4niz.jpg", // image 1
-    "https://res.cloudinary.com/dhmixzenl/image/upload/v1724212348/ven_ojc97q.jpg"  // image 2 (same or change)
+    "https://res.cloudinary.com/dhmixzenl/image/upload/v1747665179/pooo_ry4niz.jpg",
+    "https://res.cloudinary.com/dhmixzenl/image/upload/v1749358450/port_r80j6f.jpg",
   ];
 
   const animations = ['fade-left', 'fade-right', 'fade-up', 'fade-down'];
@@ -767,35 +790,63 @@ body {
       const x = i % slicesX;
       const y = Math.floor(i / slicesX);
       tile.style.backgroundImage = `url(${imgUrl})`;
+      tile.style.backgroundSize = '300px 300px';
       tile.style.backgroundPosition = `-${x * (300 / slicesX)}px -${y * (300 / slicesY)}px`;
       tile.style.animationDelay = `${i * 50}ms`;
       tile.setAttribute('data-aos', animations[i % animations.length]);
+      tile.style.width = `${300 / slicesX}px`;
+      tile.style.height = `${300 / slicesY}px`;
+      tile.style.display = 'inline-block';
       container.appendChild(tile);
     }
   }
 
-  createGrid(img1, imageUrls[0]);
-  createGrid(img2, imageUrls[1]);
+  // Initial load
+  containers.forEach((container, i) => createGrid(container, imageUrls[i]));
 
-  let showFirst = true;
-
+  let currentIndex = 0;
   setInterval(() => {
-    const active = showFirst ? img1 : img2;
-    const next = showFirst ? img2 : img1;
-    const imgUrl = showFirst ? imageUrls[1] : imageUrls[0];
+    containers.forEach((container, i) => container.classList.remove('active'));
 
-    active.classList.remove('active');
-    next.classList.add('active');
+    const nextIndex = (currentIndex + 1) % containers.length;
+    containers[nextIndex].classList.add('active');
 
-    // Re-create the next image with AOS on each switch
+    // Refresh AOS and update image
     setTimeout(() => {
-      createGrid(next, imgUrl);
+      createGrid(containers[nextIndex], imageUrls[nextIndex]);
       AOS.refreshHard();
-    }, 50); // allows class toggle to take effect before animation
+    }, 50);
 
-    showFirst = !showFirst;
+    currentIndex = nextIndex;
   }, 3000);
 </script>
+
+<style>
+  .carousel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+
+  .image-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-wrap: wrap;
+  }
+
+  .image-grid.active {
+    display: flex;
+  }
+
+  .image-grid div {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
 
 </header>
 
@@ -1394,7 +1445,7 @@ body {
 
 
 
-  <!-- Skills Section -->
+   <!-- Skills Section -->
   <!-- Font Awesome CDN (if not included already) -->
 <!-- Skills Section -->
 <link
@@ -1441,17 +1492,6 @@ body {
     <span class="percentage">85%</span>
   </div>
 
-   <div class="skill-item" data-aos="fade-left" data-aos-delay="650" data-aos-duration="700">
-    <i class="fab fa-r-project"></i> R
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="450" data-aos-duration="700">
-    <i class="fas fa-database"></i> SQL
-    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-    <span class="percentage">85%</span>
-  </div>
 
    <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
     <i class="fab fa-java"></i> Java
@@ -1465,11 +1505,6 @@ body {
     <span class="percentage">90%</span>
   </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="550" data-aos-duration="700">
-    <i class="fab fa-js-square"></i> JavaScript
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">70%</span>
-  </div>
 
 
 
@@ -1494,17 +1529,7 @@ body {
     <span class="percentage">85%</span>
   </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-    <i class="fab fa-react"></i> React
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">70%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="450" data-aos-duration="700">
-    <i class="fab fa-node-js"></i> Node.js
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
+ 
 
   <div class="skill-item" data-aos="fade-left" data-aos-delay="550" data-aos-duration="700">
     <i class="fab fa-bootstrap"></i> Bootstrap
@@ -1512,14 +1537,10 @@ body {
     <span class="percentage">80%</span>
   </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="650" data-aos-duration="700">
-    <i class="fas fa-fire"></i> Django
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
+
 
   <div class="skill-item" data-aos="fade-left" data-aos-delay="750" data-aos-duration="700">
-    <i class="fas fa-flask"></i> Flask
+    <i class="fas fa-flask"></i> JavaScript
     <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
     <span class="percentage">60%</span>
   </div>
@@ -1533,13 +1554,13 @@ body {
   </strong><br />
 
   <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fas fa-database"></i> MySQL
+    <i class="fas fa-database"></i> SQL
     <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
     <span class="percentage">75%</span>
   </div>
 
   <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-    <i class="fas fa-database"></i> PostgreSQL
+    <i class="fas fa-database"></i> MySQL
     <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
     <span class="percentage">70%</span>
   </div>
@@ -1550,17 +1571,7 @@ body {
     <span class="percentage">65%</span>
   </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-  <i class="devicon-oracle-original"></i> Oracle
-  <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-  <span class="percentage">65%</span>
-</div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="300" data-aos-duration="700">
-  <i class="devicon-redis-plain"></i> Redis
-  <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-  <span class="percentage">60%</span>
-</div>
 
   <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
   <i class="devicon-firebase-plain"></i> Firebase
@@ -1568,11 +1579,7 @@ body {
   <span class="percentage">70%</span>
 </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="450" data-aos-duration="700">
-    <i class="fas fa-database"></i> SQLite
-    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-    <span class="percentage">60%</span>
-  </div>
+ 
 </div>
 
 
@@ -1609,25 +1616,6 @@ body {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="100" data-aos-duration="700">
-  <i class="devicon-netlify-plain"></i> Netlify
-  <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-  <span class="percentage">70%</span>
-</div>
-
-
-
-   <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-  <i class="devicon-vercel-plain"></i> Vercel
-  <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-  <span class="percentage">60%</span>
-</div>
-
-<div class="skill-item" data-aos="fade-left" data-aos-delay="400" data-aos-duration="700">
-  <i class="devicon-digitalocean-plain"></i> DigitalOcean
-  <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-  <span class="percentage">65%</span>
-</div>
 
 </div>
 
@@ -1638,11 +1626,6 @@ body {
     <i class="fas fa-robot"></i> DS/ML:
   </strong><br />
 
- <div class="skill-item" data-aos="fade-left" data-aos-delay="400" data-aos-duration="700">
-  <i class="fas fa-chart-line"></i> Statsmodels
-  <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-  <span class="percentage">75%</span>
-</div>
 
  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
   <i class="devicon-pytorch-original"></i> PyTorch
@@ -1668,18 +1651,7 @@ body {
     <span class="percentage">60%</span>
   </div>
 
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="650" data-aos-duration="700">
-    <i class="fas fa-chart-bar"></i> Matplotlib
-    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-    <span class="percentage">75%</span>
-  </div>
 
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="850" data-aos-duration="700">
-    <i class="fas fa-chart-pie"></i> Tableau
-    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-    <span class="percentage">80%</span>
-  </div>
 </div>
 
 
@@ -1709,33 +1681,15 @@ body {
   <span class="percentage">90%</span>
 </div>
 
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-  <i class="devicon-docker-plain"></i> Docker
-  <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-  <span class="percentage">70%</span>
+<div class="skill-item"  data-aos="fade-left" data-aos-delay="300" data-aos-duration="700">
+    <i class="fab fa-python"></i> Jupyter Notebook
+    <div class="progress-bar">
+        <div class="progress" style="width: 80%;"></div>
+    </div>
+    <span class="percentage">80%</span>
 </div>
 
 
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="450" data-aos-duration="700">
-  <i class="devicon-amazonwebservices-plain"></i> AWS Console
-  <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-  <span class="percentage">75%</span>
-</div>
-
-
- <div class="skill-item" data-aos="fade-left" data-aos-delay="500" data-aos-duration="700">
-  <i class="devicon-azure-plain"></i> Azure Portal
-  <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-  <span class="percentage">70%</span>
-</div>
-
-<div class="skill-item" data-aos="fade-left" data-aos-delay="400" data-aos-duration="700">
-  <i class="devicon-googlecloud-plain"></i> Google Cloud Console
-  <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-  <span class="percentage">70%</span>
-</div>
 
 </div>
 
@@ -1832,8 +1786,6 @@ body {
   </style>
 </section>
 
-
-
   <!-- Projects Section -->
   <section id="projects" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
  
@@ -1843,6 +1795,8 @@ body {
   Proj<span style="color: #0077cc;">ects</span>
 </h2>
 
+
+
   <div class="project-filters">
     <button class="filter-btn active" data-filter="all" data-aos="fade-up" data-aos-delay="450" data-aos-duration="600">All Projects</button>
     <button class="filter-btn" data-filter="ml" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">ML & DS</button>
@@ -1850,6 +1804,8 @@ body {
     <button class="filter-btn" data-filter="cloud" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">Cloud</button>
     <button class="filter-btn" data-filter="game" data-aos="fade-up" data-aos-delay="700" data-aos-duration="600">Game Development</button>
   </div>
+
+
 
   <div class="box-grid" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="1050">
     <div class="box" data-category="ml" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
@@ -1866,6 +1822,25 @@ body {
       </div>
     </div>
 
+
+
+      <div class="box" data-category="ml" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
+      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1749719323/speech-to-text-4_k6z6cg.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="1000"/>
+      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">RealTime Speech Recognition and Translator</strong>
+      <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">A web app that uses JavaScript and Web Speech API to convert live voice input into text in real-time. Features a simple UI with microphone access for interactive, accurate speech-to-text transcription.
+
+</p>
+      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
+        <a href="https://github.com/venkat-0706/SpeechToTextConversion" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://venkat-0706.github.io/SpeechToTextConversion/" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-globe"></i> View
+        </a>
+      </div>
+    </div>
+
+
     <div class="box" data-category="ml" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
       <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747839380/preview_nigpxc.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="1000"/>
       <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Flavour Fusion</strong>
@@ -1879,6 +1854,8 @@ body {
         </a>
       </div>
     </div>
+
+
 
 
     <div class="box" data-category="webdev" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
@@ -1896,22 +1873,12 @@ body {
     </div>
 
 
+
+
     <div class="box" data-category="cloud" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
       <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747840308/1733673996852_cp4l1p.jpg" alt="Twalyze" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000"/>
       <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Movie Rating Prediction</strong>
       <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Movie rating prediction uses machine learning algorithms to forecast user ratings based on historical data, movie features, and individual preferences. Common models include Linear Regression, Random Forest, and Neural Networks, providing personalized and accurate rating predictions.
-
-
-
-
-
-
-
-
-
-
-
-
 </p>
       <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
         <a href="https://github.com/venkat-0706/Movie-Rating-Prediction" target="_blank" rel="noopener noreferrer">
@@ -1960,20 +1927,6 @@ body {
           <i class="fab fa-github"></i> GitHub
         </a>
         <a href="https://colab.research.google.com/github/venkat-0706/FaceExpressionRecognition-Pytorch/blob/main/Facial_Expression_Recognition_with_PyTorch.ipynb" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-category="game" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747841390/ytlefppg3t2evvmeziaz.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Snake Game</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">The Snake Game in Python is a classic arcade game where the snake moves around the screen, grows longer by eating food, and the player must avoid collisions with the snake’s tail or screen edges. It’s simple, fun, and a great project to learn Python basics.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/Snake-Game" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://github.com/venkat-0706/Snake-Game" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-globe"></i> View
         </a>
       </div>
@@ -2479,18 +2432,12 @@ Earned the HackerRank Intermediate Problem Solving Certificate by showcasing abi
     </div>
 
 
-    
-
-
-
-
-
-
-
-
-
   </div>
 </section>
+
+
+
+
 
 
   <style>
@@ -2891,20 +2838,8 @@ Earned the HackerRank Intermediate Problem Solving Certificate by showcasing abi
     });
   </script>
 
-    <!-- Audio Element -->
-  <audio id="tabAudio" src="https://res.cloudinary.com/dhmixzenl/video/upload/v1747988115/174798804861563742358btfdza-voicemaker.in-speech_mowc8y.mp3"></audio>
 
-  <!-- JavaScript for Tab Switch Voice Trigger -->
-  <script>
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) {
-        const audio = document.getElementById("tabAudio");
-        audio.play().catch(e => {
-          console.log("Audio playback failed. User interaction may be required.");
-        });
-      }
-    });
-  </script>
+ 
 
 </body>
 </html>
