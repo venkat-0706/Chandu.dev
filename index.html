@@ -1,101 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chandu's Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abbireddy Venkata Chandu | Portfolio</title>
+  <meta name="description" content="Portfolio of Abbireddy Venkata Chandu - aspiring Software Engineer focused on web, AI/ML, and data analytics.">
   <link rel="icon" href="https://res.cloudinary.com/dhmixzenl/image/upload/v1747637111/cropped_image_icg2th.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
-
-  
-
-
-<script>
-  window.addEventListener('load', () => {
-    const audio = document.getElementById('voicePlayer');
-
-    // Delay playback by 10 seconds (10,000 milliseconds)
-    setTimeout(() => {
-      const playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          console.log('Audio playing after 10 seconds.');
-        }).catch(error => {
-          console.log('Autoplay blocked. Waiting for user interaction.', error);
-          // Enable audio on first user click
-          document.addEventListener('click', () => {
-            audio.play();
-          }, { once: true });
-        });
-      }
-    }, 1000); // 1 seconds
-  });
-</script>
-
-
- <script>
-    // Store original title and favicon
-    var originalTitle = document.title;
-    var originalFavicon = "favicon.ico";
-    var attentionFavicon = "attention.ico"; // You must provide this icon
-    var favicon = document.getElementById("favicon");
-    var blinkInterval;
-
-    // Detect when tab is hidden or visible
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) {
-        document.title = "😢 Please visit my portfolio!";
-        blinkInterval = setInterval(() => {
-          favicon.href = (favicon.href.includes(originalFavicon)) ? attentionFavicon : originalFavicon;
-        }, 800);
-      } else {
-        document.title = originalTitle;
-        clearInterval(blinkInterval);
-        favicon.href = originalFavicon;
-      }
-    });
-  </script>
-
-
-  <!-- AOS & JS -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-
-    // Tab switch detection and alert
-    const originalTitle = document.title;
-    const audio = document.getElementById('attentionAudio');
-
-    // Unlock autoplay
-    window.addEventListener('click', () => {
-      audio.play().then(() => audio.pause()).catch(() => {});
-    }, { once: true });
-
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) {
-        document.title = "👀 Please visit my page!";
-        audio.play().catch(() => {});
-      } else {
-        document.title = originalTitle;
-      }
-    });
-  </script>
-
-
-  <!-- AOS CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <style>
     :root {
-      --primary-color: #0077cc;
-      --secondary-color: #00b3b3;
-      --bg-light: #f0f4f8;
-      --bg-white: #fff;
+      --bg: #f3f7ff;
+      --surface: #ffffff;
+      --surface-2: #eef4ff;
+      --text: #0f1d3a;
+      --muted: #566a92;
+      --line: #d6e3ff;
+      --brand: #1464ff;
+      --brand-2: #00a4d6;
+      --brand-3: #0a43ad;
+      --success: #058d55;
+      --nav-bg: rgba(243, 247, 255, 0.86);
+      --nav-border: rgba(214, 227, 255, 0.8);
+      --menu-bg: rgba(255, 255, 255, 0.98);
+      --role: #23406f;
+      --chip-text: #214074;
+      --avatar-bg-start: #e3ecff;
+      --avatar-bg-end: #d7f7ff;
+      --soft-text: #28487f;
+      --stat-bg-start: #eaf2ff;
+      --stat-bg-end: #f8fbff;
+      --logo-bg: #ffffff;
+      --bar-bg: #dfeaff;
+      --filter-text: #2d4e88;
+      --tag-text: #2f4d84;
+      --tag-bg: #ecf3ff;
+      --link-btn-bg: #f7faff;
+      --achievement-bg-start: #ffffff;
+      --achievement-bg-end: #f1f7ff;
+      --contact-point: #294b86;
+      --social-bg: #f8fbff;
+      --form-label: #2a4a82;
+      --input-border: #c8d9ff;
+      --input-bg: #fcfdff;
+      --footer-text: #5a6e95;
+      --inverse-text: #ffffff;
+      --radius: 22px;
+      --shadow: 0 18px 45px rgba(16, 44, 96, 0.12);
+    }
+
+    body[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #071327;
+      --surface: #0d1f3b;
+      --surface-2: #102645;
+      --text: #e7eefb;
+      --muted: #aabada;
+      --line: #26436f;
+      --brand: #5ea6ff;
+      --brand-2: #29c0e7;
+      --brand-3: #bdd7ff;
+      --success: #2dd294;
+      --nav-bg: rgba(6, 17, 34, 0.88);
+      --nav-border: rgba(40, 70, 114, 0.82);
+      --menu-bg: rgba(8, 22, 41, 0.96);
+      --role: #c5d6f4;
+      --chip-text: #d8e6ff;
+      --avatar-bg-start: #12305a;
+      --avatar-bg-end: #134261;
+      --soft-text: #c7dbff;
+      --stat-bg-start: #122c53;
+      --stat-bg-end: #10223f;
+      --logo-bg: #17325a;
+      --bar-bg: #203b63;
+      --filter-text: #d0e1ff;
+      --tag-text: #d7e7ff;
+      --tag-bg: #17325a;
+      --link-btn-bg: #143258;
+      --achievement-bg-start: #102748;
+      --achievement-bg-end: #0d1f3b;
+      --contact-point: #d0e2ff;
+      --social-bg: #153153;
+      --form-label: #d2e3ff;
+      --input-border: #315687;
+      --input-bg: #0a1b36;
+      --footer-text: #9db5dd;
+      --inverse-text: #f7fbff;
+      --shadow: 0 18px 45px rgba(0, 5, 20, 0.5);
     }
 
     * {
@@ -104,2742 +98,1493 @@
       padding: 0;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-light);
-      color: #333;
-      line-height: 1.6;
+      color-scheme: light;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(35rem 35rem at 5% -10%, rgba(20, 100, 255, 0.18), transparent 45%),
+        radial-gradient(30rem 30rem at 95% 0%, rgba(0, 164, 214, 0.15), transparent 45%),
+        var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.35s ease, color 0.3s ease;
     }
 
-    header {
+    h1, h2, h3, h4, .brand {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+    }
+
+    header#home,
+    .section {
+      scroll-margin-top: 92px;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1100;
+      width: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 18px rgba(20, 100, 255, 0.5);
+    }
+
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--nav-border);
+      backdrop-filter: blur(10px);
+      background: var(--nav-bg);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-wrap {
+      min-height: 74px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      background: #f8f9fc;
-      padding: 3rem 2rem;
-    }
-
-    .intro {
-      flex: 1;
-      max-width: 600px;
-    }
-
-    .intro h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: var(--primary-color);
-      line-height: 1.1;
-    }
-
-    .intro p {
-      margin-top: 1rem;
-      font-size: 1.15rem;
-      color: #555;
-    }
-
-    .buttons {
-      margin-top: 1.5rem;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 0.7rem 1.4rem;
-      margin-right: 1rem;
-      background: var(--primary-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .buttons a:hover {
-      background: var(--secondary-color);
-    }
-
-    .header-img {
-      flex: 1;
-      text-align: center;
-    }
-
-    .header-img img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 4px solid var(--primary-color);
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: var(--bg-white);
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    h2 {
-      font-size: 1.9rem;
-      color: var(--primary-color);
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    #about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .about-img {
-      flex: 1;
-      text-align: center;
-    }
-
-    .about-img img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary-color);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .about-text {
-      flex: 2;
-      min-width: 280px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-      color: #444;
-    }
-
-    ul li {
-      margin-bottom: 0.6rem;
-      font-weight: 500;
-    }
-
-    .box-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .box {
-      background: #eef6fb;
-      padding: 1rem;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.25s ease;
-    }
-
-    .box:hover {
-      transform: translateY(-5px);
-    }
-
-    .box img {
-      width: 100%;
-      height: 150px;
-      border-radius: 10px;
-      margin-bottom: 0.8rem;
-      object-fit: cover;
-      user-select: none;
-    }
-
-    .project-links {
-      margin-top: auto;
-    }
-
-    .project-links a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 0.3s ease;
-    }
-
-    .project-links a:hover {
-      color: var(--secondary-color);
-    }
-
-    .project-links a i {
-      font-size: 1.2rem;
-    }
-
-    #contact {
-      background: #f9fbfc;
-      padding: 4rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    }
-
-    #contact > div {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    #contact .contact-info {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    #contact form {
-      flex: 1;
-      min-width: 280px;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      display: flex;
-      flex-direction: column;
       gap: 1rem;
     }
 
-    #contact input,
-    #contact textarea {
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
+    .brand { font-size: 1.25rem; color: var(--brand-3); }
+    .brand span { color: var(--brand); }
 
-    #contact button {
-      padding: 0.8rem 1.5rem;
-      background: var(--primary-color);
-      color: white;
-      font-weight: 700;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-    }
-
-    #contact button:hover {
-      background: var(--secondary-color);
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header-img img {
-        margin-top: 2rem;
-      }
-
-      #about {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      #contact > div {
-        flex-direction: column;
-      }
-
-      .intro h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Home Section -->
- <!-- Add this in your HTML head or before body close -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<style>
-    @keyframes fadeInUp {
-      0%   { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .animated {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    .animated-delay-1 { animation-delay: 0.2s; }
-    .animated-delay-2 { animation-delay: 0.4s; }
-    .animated-delay-3 { animation-delay: 0.6s; }
-    .animated-delay-4 { animation-delay: 0.8s; }
-    .animated-delay-5 { animation-delay: 1s; }
-  </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-
-<header class="animated animated-delay-1" data-aos="fade-up">
-  <div class="intro animated animated-delay-2" tabindex="0" aria-label="Introduction" data-aos="fade-up" data-aos-delay="100">
-   <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1.4;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>
-    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000">
-      Hello, I'm <span style="color: black;" >Abbireddy</span>
-    </div>
-    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
-      <span class="highlight" style="color: #0077cc;">Venkata Chandu</span>
-    </div>
-  </h1>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
-<p data-aos="fade-up" data-aos-delay="0">
-  <span class="typing-text" data-phrases='[
-      "Aspiring Software Developerr",
-      "Front-End Developerr",
-      "AI & ML Enthusiastt",
-      "Data Analystt"
-  ]'></span>
-</p>
-
-
-
-    <div class="buttons" role="navigation" aria-label="Primary action buttons">
-
-      <a href="#about" class="btn btn-primary"  data-aos="fade-left" data-aos-delay="1000">About Me</a>
-      <a href="#skills" class="btn btn-secondary"  data-aos="fade-right" data-aos-delay="1150">Skills</a>
-      <a href="#projects" class="btn btn-secondary"  data-aos="fade-left" data-aos-delay="1300">View My Work</a>
-      <a href="#contact" class="btn btn-primary"  data-aos="fade-right" data-aos-delay="1500">Contact Me</a>
-    </div>
-    <div class="social-icons" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-  <a href="https://www.linkedin.com/in/chandu0706/" target="_blank" data-aos="fade-right" data-aos-delay="550"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://github.com/venkat-0706" target="_blank" data-aos="fade-left" data-aos-delay="750"><i class="fab fa-github"></i></a>
-  <a href="https://leetcode.com/venkat-0706/" target="_blank" data-aos="fade-left" data-aos-delay="1350"><i class="fas fa-code"></i></a>
-  <a href="https://auth.geeksforgeeks.org/user/chanduabbireddy0706/" target="_blank" data-aos="fade-right" data-aos-delay="1550"><i class="fas fa-laptop-code"></i></a>
-</div>
-
-  </div>
-
-
-
-
-<!-- CSS -->
-<style>
-  .intro {
-    flex: 1 1 400px;
-    animation: fadeInUp 1s ease forwards;
-    text-align: center;
-  }
-
-  .intro h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1.1;
-    margin: 0 0 0.7rem 0;
-    font-weight: 800;
-  }
-
-  .intro .highlight {
-    color: #007bff;
-  }
-
-  .typing-text {
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: #007bff;
-    border-right: 2px solid #007bff;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: blink 0.7s step-end infinite;
-  }
-
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    padding: 0.7rem 1.8rem;
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1.4vw, 1rem);
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-  }
-
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.6);
-    transform: scale(1.05);
-    outline: none;
-  }
-
-  .btn-secondary {
-    background-color: #e0e0e0;
-    color: #333;
-    border: none;
-  }
-
-  .btn-secondary:hover,
-  .btn-secondary:focus {
-    background-color: #bdbdbd;
-    box-shadow: 0 5px 15px rgba(100, 100, 100, 0.3);
-    transform: scale(1.05);
-    outline: none;
-  }
-  body {
-  margin: 0;
-  transition: background-color 0.3s ease-in-out;
-  color: #ffffff;
-}
-/* Base */
-body {
-  margin: 0;
-  transition: background-color 0.3s ease-in-out;
-  color: #ffffff;
-}
-
-/* Neon Themes */
-.theme-blue {
-  animation: neonBlue 1s infinite alternate;
-}
-
-.theme-dark {
-  animation: neonDark 1s infinite alternate;
-}
-
-.theme-white {
-  animation: neonWhite 1s infinite alternate;
-  color: #000;
-}
-
-/* Animations */
-@keyframes neonBlue {
-  0% { background-color: #0ff; box-shadow: 0 0 10px #0ff; }
-  100% { background-color: #003b4f; box-shadow: 0 0 30px #0ff; }
-}
-
-@keyframes neonDark {
-  0% { background-color: #000; box-shadow: 0 0 10px #fff; }
-  100% { background-color: #1a1a1a; box-shadow: 0 0 30px #fff; }
-}
-
-@keyframes neonWhite {
-  0% { background-color: #ffffff; box-shadow: 0 0 10px #aaa; }
-  100% { background-color: #e0e0e0; box-shadow: 0 0 30px #aaa; }
-}
-/* Base */
-body {
-  margin: 0;
-  transition: background-color 0.3s ease-in-out;
-  color: #ffffff;
-}
-
-/* Neon Themes */
-.theme-blue {
-  animation: neonBlue 1s infinite alternate;
-}
-
-.theme-dark {
-  animation: neonDark 1s infinite alternate;
-}
-
-.theme-white {
-  animation: neonWhite 1s infinite alternate;
-  color: #000;
-}
-
-/* Animations */
-@keyframes neonBlue {
-  0% { background-color: #0ff; box-shadow: 0 0 10px #0ff; }
-  100% { background-color: #003b4f; box-shadow: 0 0 30px #0ff; }
-}
-
-@keyframes neonDark {
-  0% { background-color: #000; box-shadow: 0 0 10px #fff; }
-  100% { background-color: #1a1a1a; box-shadow: 0 0 30px #fff; }
-}
-
-@keyframes neonWhite {
-  0% { background-color: #ffffff; box-shadow: 0 0 10px #aaa; }
-  100% { background-color: #e0e0e0; box-shadow: 0 0 30px #aaa; }
-}
-
-/* Toggle Button Style (very small and transparent) */
-.theme-toggle {
-  text-align: center;
-  margin-top: 20px;
-}
-
-#theme-toggle-btn {
-  background: none;
-  border: none;
-  font-size: 0.8rem;
-  opacity: 0.2;
-  cursor: pointer;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  padding: 5px;
-}
-
-#theme-toggle-btn:hover {
-  opacity: 0.6;
-  transform: scale(1.2);
-}
-
-
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: #007bff; }
-  }
-</style>
-<script>
-  const toggleBtn = document.getElementById('theme-toggle-btn');
-  const themes = ['theme-blue', 'theme-dark', 'theme-white'];
-  let currentThemeIndex = 0;
-
-  toggleBtn.addEventListener('click', () => {
-    let count = 0;
-    const interval = setInterval(() => {
-      document.body.className = '';
-      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-      document.body.classList.add(themes[currentThemeIndex]);
-      count++;
-      if (count >= themes.length - 1) {
-        clearInterval(interval);
-      }
-    }, 250); // 0.25s interval
-  });
-
-  // Set default
-  document.body.classList.add(themes[currentThemeIndex]);
-</script>
-
-
-
-<!-- JavaScript -->
-<script>
-  const typingSpan = document.querySelector(".typing-text");
-  const phrases = JSON.parse(typingSpan.getAttribute("data-phrases"));
-  let phraseIndex = 0;
-  let letterIndex = 0;
-  let currentText = '';
-  let isDeleting = false;
-  const typingSpeed = 100;
-  const deletingSpeed = 50;
-  const delayBetweenPhrases = 1500;
-
-  function type() {
-    const phrase = phrases[phraseIndex];
-
-    if (isDeleting) {
-      currentText = phrase.substring(0, letterIndex--);
-    } else {
-      currentText = phrase.substring(0, letterIndex++);
-    }
-
-    typingSpan.textContent = currentText;
-
-    if (!isDeleting && letterIndex === phrase.length) {
-      isDeleting = true;
-      setTimeout(type, delayBetweenPhrases);
-    } else if (isDeleting && letterIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      setTimeout(type, 300);
-    } else {
-      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
-    }
-  }
-
-  type();
-</script>
-  <style>
-    .carousel-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      margin: 50px auto;
-    }
-
-    .image-grid {
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: grid;
-      width: 300px;
-      height: 300px;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      overflow: hidden;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .image-grid.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .image-grid div {
-      opacity: 0;
-      transform: scale(0.5) rotate(10deg);
-      animation: sliceIn 0.8s forwards ease-out;
-      background-size: 300px 300px;
-    }
-
-    @keyframes sliceIn {
-      to {
-        opacity: 1;
-        transform: scale(1) rotate(0deg);
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="carousel-container">
-  <div id="img1" class="image-grid active"></div>
-  <div id="img2" class="image-grid"></div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: false });
-
-  const containers = [
-    document.getElementById('img1'),
-    document.getElementById('img2')
-  ];
-
-  const imageUrls = [
-    "https://res.cloudinary.com/dhmixzenl/image/upload/v1747665179/pooo_ry4niz.jpg",
-    "https://res.cloudinary.com/dhmixzenl/image/upload/v1749358450/port_r80j6f.jpg",
-  ];
-
-  const animations = ['fade-left', 'fade-right', 'fade-up', 'fade-down'];
-
-  function createGrid(container, imgUrl) {
-    container.innerHTML = '';
-    const slicesX = 5, slicesY = 5;
-    const total = slicesX * slicesY;
-
-    for (let i = 0; i < total; i++) {
-      const tile = document.createElement('div');
-      const x = i % slicesX;
-      const y = Math.floor(i / slicesX);
-      tile.style.backgroundImage = `url(${imgUrl})`;
-      tile.style.backgroundSize = '300px 300px';
-      tile.style.backgroundPosition = `-${x * (300 / slicesX)}px -${y * (300 / slicesY)}px`;
-      tile.style.animationDelay = `${i * 50}ms`;
-      tile.setAttribute('data-aos', animations[i % animations.length]);
-      tile.style.width = `${300 / slicesX}px`;
-      tile.style.height = `${300 / slicesY}px`;
-      tile.style.display = 'inline-block';
-      container.appendChild(tile);
-    }
-  }
-
-  // Initial load
-  containers.forEach((container, i) => createGrid(container, imageUrls[i]));
-
-  let currentIndex = 0;
-  setInterval(() => {
-    containers.forEach((container, i) => container.classList.remove('active'));
-
-    const nextIndex = (currentIndex + 1) % containers.length;
-    containers[nextIndex].classList.add('active');
-
-    // Refresh AOS and update image
-    setTimeout(() => {
-      createGrid(containers[nextIndex], imageUrls[nextIndex]);
-      AOS.refreshHard();
-    }, 50);
-
-    currentIndex = nextIndex;
-  }, 3000);
-</script>
-
-<style>
-  .carousel-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: auto;
-  }
-
-  .image-grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-    flex-wrap: wrap;
-  }
-
-  .image-grid.active {
-    display: flex;
-  }
-
-  .image-grid div {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-</style>
-
-
-</header>
-
-<style>
-  /* Reset and base */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
-    color: #222;
-  }
-
-  /* Header layout */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(2rem, 5vw, 4rem);
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: clamp(2rem, 4vw, 3rem);
-    flex-wrap: wrap;
-  }
-
-  /* Intro text container */
-  .intro {
-    flex: 1 1 400px;
-    animation: fadeInUp 1s ease forwards;
-  }
-  .intro h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1.1;
-    margin: 0 0 0.7rem 0;
-    font-weight: 800;
-  }
-  .intro .highlight {
-    color: #007bff;
-  }
-  .intro p {
-    font-size: clamp(1rem, 1.8vw, 1.3rem);
-    margin-bottom: 1.5rem;
-    color: #555;
-    max-width: 480px;
-  }
-
-  /* Buttons container */
-  .buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .btn {
-    padding: 0.7rem 1.8rem;
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1.4vw, 1rem);
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-primary {
-    background-color: #007bff;
-    color: white;
-    border: none;
-  }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.6);
-    transform: scale(1.05);
-    outline: none;
-  }
-  .btn-secondary {
-    background-color: #e0e0e0;
-    color: #333;
-    border: none;
-  }
-  .btn-secondary:hover,
-  .btn-secondary:focus {
-    background-color: #bdbdbd;
-    box-shadow: 0 5px 15px rgba(100, 100, 100, 0.3);
-    transform: scale(1.05);
-    outline: none;
-  }
-
-  /* Image container with box shape */
-  .header-img {
-    flex: 1 1 300px;
-    display: flex;
-    justify-content: center;
-    animation: fadeInScale 1s ease 0.3s forwards;
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  .header-img .img-container {
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    max-width: 320px;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
-  }
-  .header-img .img-container:hover,
-  .header-img .img-container:focus-within {
-    transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.5);
-    outline: none;
-  }
-  .header-img img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 850px) {
-    header {
-      justify-content: center;
-      padding: clamp(1.5rem, 4vw, 3rem);
-    }
-    .intro, .header-img {
-      flex: 1 1 100%;
-      text-align: center;
-    }
-    .header-img {
-      margin-top: 2rem;
-      opacity: 1 !important;
-      transform: scale(1) !important;
-    }
-    .buttons {
-      justify-content: center;
-    }
-  }
-
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes fadeInScale {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>
-
-
-  <!-- About Section -->
- <!-- Add FontAwesome CDN for icons -->
-<!-- FontAwesome CDN for icons -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
-<section id="about"   data-aos="fade-up" data-aos-duration="800" style="padding: clamp(2rem, 4vw, 4rem) 1rem; min-height: 70vh; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
-    
-    <h2 id="fade-down" style="color: #1c1c1c;"
-    data-aos="fade-left"
-    data-aos-duration="1000">
-  About <span style="color: #0077cc;">Me</span>
-</h2>
-
-  <div class="about-container animated animated-delay-2"  tabindex="0" aria-label="About Me Section">
-    
-    <!-- Left side: Image + Name + Resume button stacked vertically -->
-    <div class="about-left animated animated-delay-2" data-aos="fade-right" data-aos-delay="500" data-aos-duration="700  aria-label="Photo, Name and Resume">
-     <!-- AOS CSS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-<!-- Image with AOS fade-right -->
-<div data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-  <img
-    src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747637111/cropped_image_icg2th.png"
-    alt="Chandu Abbireddy"
-    loading="lazy"
-    style="width: 300px; height: auto; border-radius: 12px;"
-  />
-</div>
-
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-
-        <!-- Name below image -->
-   <h3 class="about-name" aria-label="Name Venkata Chandu"
-     style="margin: 0.8rem 0 1.2rem 0; font-size: clamp(1.5rem, 2vw, 2rem); font-weight: 700; user-select: none; text-align: center;"
-     data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="700" data-aos-easing="ease-in-out">
-
-  <span style="color: #222; display: inline-block;" 
-        data-aos="flip-left" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-    Venkata
-  </span> 
-  <span style="color: #007bff; display: inline-block; margin-left: 10px;" 
-        data-aos="flip-right" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-    Chandu
-  </span>
-</h3>
-
-
-<a 
-  href="https://drive.google.com/uc?export=download&id=1B_3ryT8o5SqlNByCytgrndjKlU5fpxdz" 
-  download 
-  class="btn-resume" 
-  aria-label="Download Resume"
-  data-aos="fade-right"
-  data-aos-delay="800"
-  data-aos-duration="800"
-  style="display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.2rem; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;"
->
-  <i class="fas fa-download" data-aos="fade-down" data-aos-delay="1200" data-aos-duration="1200"></i> Download Resume
-</a>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const animations = [
-      "fade-up", "fade-down", "fade-left", "fade-right",
-      "zoom-in", "zoom-in-up", "zoom-in-down", 
-      "flip-left", "flip-right", "slide-up"
-    ];
-
-    const resumeBtn = document.querySelector(".btn-resume");
-
-    // Select a random animation
-    const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
-
-    // Apply AOS attributes
-    resumeBtn.setAttribute("data-aos", randomAnimation);
-    resumeBtn.setAttribute("data-aos-delay", "1300");
-    resumeBtn.setAttribute("data-aos-duration", "1500");
-
-    AOS.init(); // Initialize or re-initialize AOS
-  });
-</script>
-
-
-
-
-
-
-    </div>
-
-    <!-- Right side: Text content -->
-    <div class="about-content animated animated-delay-2" data-aos="fade-left" data-aos-delay="300" data-aos-duration="700" style="max-width: 600px;"">
-      <p data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000" data-aos-easing="ease-in-out">
-  I am an aspiring Software Development Engineer (SDE) and Data Analyst with
-  strong expertise in Python, C++, SQL, and robust foundations in Data
-  Structures, Algorithms, and Object-Oriented Programming. I am passionate
-  about building scalable software solutions and extracting insights from
-  data.
-</p>
-
-
-      <ul class="contact-info animated animated-delay-2" aria-label="Contact Information" data-aos="fade-right" data-aos-delay="400" data-aos-duration="500">
-         <li data-aos="fade-left" data-aos-delay="400" data-aos-duration="500"><i class="fas fa-envelope"></i> <strong>Email:</strong> chanduabbireddy247@gmail.com</li>
-        <li data-aos="fade-left" data-aos-delay="450" data-aos-duration="500"><i class="fas fa-phone"></i> <strong>Phone:</strong> +91 9640186272</li>
-        <li data-aos="fade-left" data-aos-delay="500" data-aos-duration="500"><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Kakinada, India</li>
-        <li data-aos="fade-left" data-aos-delay="550" data-aos-duration="500"><i class="fas fa-graduation-cap"></i> <strong>Graduation:</strong> May 2026</li>
-        <li data-aos="fade-left" data-aos-delay="600" data-aos-duration="500"><i class="fas fa-building-columns"></i> <strong>College:</strong> Aditya College of Engineering And Technology</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<style>
-    section h2 {
-  font-size: 2rem;
-  color: #007bff;
-  margin-bottom: 1rem;
-  text-align: center; /* Add this line to center the text */
-}
-  /* Container holds left and right side */
-  .about-container {
-    display: flex;
-    align-items: flex-start;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: clamp(1rem, 3vw, 2rem);
-    flex-wrap: nowrap;
-    animation: fadeInUp 0.7s ease forwards;
-  }
-
-  /* Left side wrapper: stacks image + name + button vertically */
-  .about-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(0.8rem, 2vw, 1.5rem);
-    flex-shrink: 0; /* prevent shrinking */
-    min-width: clamp(140px, 20vw, 180px);
-  }
-
-  /* Image styling */
-  .about-image img {
-    width: 300px;
-    height: 300px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-    border: 3px solid #007bff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: scaleIn 0.5s ease forwards;
-  }
-  .about-image img:hover,
-  .about-image img:focus {
-    transform: scale(1.07);
-    box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
-    outline: none;
-  }
-
-  /* Resume download button below image */
- .btn-resume {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: clamp(0.5rem, 1vw, 0.7rem) clamp(1rem, 2vw, 1.3rem);
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-  border-radius: 5px;
-  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-
-  /* Optional: remove if you're switching to AOS-only animation */
-  /* animation: fadeInUp 1s ease 0.3s forwards; */
-  /* opacity: 0; */
-}
-
-  .btn-resume:hover,
-  .btn-resume:focus {
-    background-color: #0056b3;
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.7);
-    outline: none;
-    transform: scale(1.05);
-  }
-  /* Make the button visible after animation */
-  .btn-resume[style*="animation"] {
-    opacity: 1;
-  }
-
-  /* Right content area - column layout */
-  .about-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  .about-content p {
-    font-size: clamp(1rem, 1.8vw, 1.2rem);
-    line-height: 1.6;
-    color: #222;
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
-  }
-
-  /* Contact info list */
-  .contact-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .contact-info li {
-    font-size: clamp(0.9rem, 1.2vw, 1rem);
-    margin-bottom: 0.7rem;
-    color: #444;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-  }
-  .contact-info li i {
-    color: #007bff;
-    min-width: 20px;
-    text-align: center;
-  }
-
-  /* Responsive for smaller screens */
-  @media (max-width: 700px) {
-    .about-container {
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 100%;
-      padding: 0 1rem;
-    }
-    .about-left {
-      min-width: auto;
-      margin-bottom: 1.5rem;
-    }
-    .btn-resume {
-      align-self: center;
-    }
-  }
-
-  /* Animations */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-</style>
-
-
-<!-----Education-->
-
-
-<style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #e8f0ff;
-      margin: 0;
-      padding: 40px 0;
-    }
-
-    .education-section {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      position: relative;
-    }
-
-    .education-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background-color: rgba(0, 0, 0, 0.0);
-      transform: translateX(-50%);
-      z-index: 1;
-    }
-
-    .edu-box {
+    .nav-actions {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin: 30px 0;
+      gap: 0.6rem;
       position: relative;
-      z-index: 2;
-      max-width: 45%;
-      background-color: #ffffff;
-      padding: 15px 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    .edu-box.left {
-      flex-direction: row;
-      margin-left: 0;
-      margin-right: auto;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--muted);
+      padding: 0.25rem 0.15rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--brand-3);
+      border-color: var(--brand);
+    }
+
+    .theme-toggle,
+    .nav-toggle {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--brand-3);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.48rem 0.72rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .theme-toggle:hover,
+    .nav-toggle:hover {
+      transform: translateY(-1px);
+      border-color: var(--brand);
+      color: var(--brand);
+      box-shadow: 0 10px 20px rgba(20, 100, 255, 0.15);
+    }
+
+    .theme-toggle span {
+      min-width: 3.1rem;
       text-align: left;
     }
 
-    .edu-box.right {
-      flex-direction: row-reverse;
-      margin-left: auto;
-      margin-right: 0;
-      text-align: right;
+    .nav-toggle {
+      font-size: 1.1rem;
+      display: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
     }
 
-    .edu-box img {
-      width: 100px;
-      height: auto;
-      margin: 0 15px;
-      flex-shrink: 0;
+    .hero {
+      padding: 7.9rem 0 3.8rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
     }
 
-    .edu-text {
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(20, 100, 255, 0.1);
+      border: 1px solid rgba(20, 100, 255, 0.25);
+      color: var(--brand-3);
+      font-size: 0.83rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.9vw, 4rem);
+      margin-bottom: 0.7rem;
+      color: var(--brand-3);
+    }
+
+    .hero h1 span { color: var(--brand); }
+
+    .role-line {
+      margin-bottom: 1rem;
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      font-weight: 700;
+      color: var(--role);
+      min-height: 1.95em;
+    }
+
+    .dynamic-role {
+      display: inline-block;
+      color: var(--brand);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .dynamic-role.swap { opacity: 0; transform: translateY(7px); }
+
+    .hero p { max-width: 62ch; color: var(--muted); margin-bottom: 1.45rem; }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.3rem; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.73rem 1.15rem;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.93rem;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      color: var(--inverse-text);
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      box-shadow: 0 10px 25px rgba(20, 100, 255, 0.28);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(20, 100, 255, 0.36); }
+
+    .btn-secondary {
+      color: var(--brand-3);
+      background: var(--surface);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      border-color: var(--brand);
+      box-shadow: 0 10px 25px rgba(20, 100, 255, 0.13);
+    }
+
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-bottom: 1.1rem; }
+
+    .hero-chip {
+      font-size: 0.84rem;
+      color: var(--chip-text);
+      font-weight: 700;
+      padding: 0.38rem 0.68rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .social-row a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      color: var(--brand-3);
+      border: 1px solid var(--line);
+      box-shadow: 0 5px 15px rgba(10, 37, 88, 0.08);
+      transition: 0.2s ease;
+    }
+
+    .social-row a:hover {
+      transform: translateY(-2px);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .hero-media { display: flex; justify-content: center; align-items: center; }
+
+    .avatar-frame {
+      position: relative;
+      width: min(360px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 28px;
+      padding: 11px;
+      background: linear-gradient(130deg, var(--avatar-bg-start) 15%, var(--avatar-bg-end) 90%);
+      box-shadow: 0 30px 55px rgba(20, 100, 255, 0.18);
+    }
+
+    .avatar-frame::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      z-index: -1;
+      border-radius: 34px;
+      background: linear-gradient(150deg, rgba(20, 100, 255, 0.26), rgba(0, 164, 214, 0.25));
+      filter: blur(18px);
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .floating-note {
+      position: absolute;
+      right: -18px;
+      bottom: 22px;
+      padding: 0.56rem 0.82rem;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--brand-3);
+    }
+
+    .floating-note i { color: var(--success); margin-right: 0.25rem; }
+
+    .section { padding: 1.5rem 0; }
+
+    .section-head { margin-bottom: 1.1rem; }
+
+    .section-head p {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.55rem, 3vw, 2.35rem);
+      color: var(--brand-3);
+    }
+
+    .panel {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+    }
+
+    .panel,
+    .edu-card,
+    .project-card,
+    .cert-card,
+    .achievement-card,
+    .filter-btn,
+    .hero-chip,
+    .social-row a,
+    .contact-social a,
+    .theme-toggle,
+    .nav-toggle,
+    .contact-form input,
+    .contact-form textarea,
+    .card-links a {
+      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1rem;
+    }
+
+    .about-text p { color: var(--muted); margin-bottom: 0.8rem; }
+
+    .about-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .about-list li {
+      padding: 0.64rem 0.7rem;
+      border-radius: 12px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+      color: var(--soft-text);
+      font-weight: 700;
+    }
+
+    .about-list li i { color: var(--brand); margin-right: 0.38rem; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .stat-card {
+      padding: 0.95rem;
+      border-radius: 15px;
+      background: linear-gradient(140deg, var(--stat-bg-start), var(--stat-bg-end));
+      border: 1px solid var(--line);
+      min-height: 112px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-value {
+      font-size: 1.7rem;
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--brand-3);
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .stat-label { color: var(--muted); font-weight: 700; font-size: 0.88rem; }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease;
+    }
+
+    .edu-card:hover { transform: translateY(-5px); }
+
+    .edu-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .edu-head img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--logo-bg);
+      padding: 0.3rem;
+    }
+
+    .edu-card h3 { font-size: 1.05rem; color: var(--brand-3); }
+    .edu-card p { color: var(--muted); font-size: 0.91rem; margin: 0.18rem 0; }
+    .edu-year { color: var(--success); font-weight: 800; }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .skills-box h3 {
+      font-size: 1.1rem;
+      color: var(--brand-3);
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .skill-tags span {
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      font-size: 0.84rem;
+      color: var(--soft-text);
+      font-weight: 700;
+    }
+
+    .skill-bars { display: grid; gap: 0.7rem; margin-top: 0.55rem; }
+    .skill-row { display: grid; gap: 0.35rem; }
+
+    .skill-row header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--soft-text);
+      font-size: 0.89rem;
+      font-weight: 700;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: var(--bar-bg);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: linear-gradient(100deg, var(--brand), var(--brand-2));
+      transition: width 1s ease;
+    }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 0.58rem; margin-bottom: 1rem; }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--filter-text);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      padding: 0.48rem 0.82rem;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: var(--inverse-text);
+      border-color: var(--brand);
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+    }
+
+    .projects-grid,
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .project-card,
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .project-card.hidden { display: none; }
+
+    .project-thumb,
+    .cert-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 0.95rem;
+      display: flex;
+      flex-direction: column;
       flex: 1;
     }
 
-    .edu-text h3 {
-      margin: 0 0 10px;
-      color: #0a2472;
-      font-size: 20px;
+    .card-body h3 {
+      font-size: 1.03rem;
+      color: var(--brand-3);
+      margin-bottom: 0.42rem;
     }
 
-    .edu-text p {
-      margin: 4px 0;
+    .card-body p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
     }
 
-    .edu-text strong {
-      color: #06770a;
-      font-weight: 600;
+    .mini-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+      margin-bottom: 0.7rem;
     }
 
-    @media screen and (max-width: 768px) {
-      .education-section::before {
-        left: 50px;
+    .mini-tags span {
+      font-size: 0.73rem;
+      color: var(--tag-text);
+      font-weight: 800;
+      background: var(--tag-bg);
+      border: 1px solid var(--line);
+      padding: 0.23rem 0.47rem;
+      border-radius: 999px;
+    }
+
+    .card-links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-links a {
+      color: var(--brand-3);
+      font-size: 0.84rem;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 0.4rem 0.63rem;
+      background: var(--link-btn-bg);
+      transition: 0.2s ease;
+    }
+
+    .card-links a:hover {
+      color: var(--inverse-text);
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .achievement-card {
+      padding: 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: linear-gradient(150deg, var(--achievement-bg-start), var(--achievement-bg-end));
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .achievement-card h3 { font-size: 1.02rem; color: var(--brand-3); }
+
+    .achievement-number {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2rem;
+      color: var(--brand);
+      font-weight: 700;
+      line-height: 1;
+      min-height: 1em;
+    }
+
+    .achievement-card p { color: var(--muted); font-size: 0.88rem; }
+    .achievement-card a { margin-top: auto; color: var(--brand); font-weight: 800; font-size: 0.86rem; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1rem;
+    }
+
+    .contact-points {
+      list-style: none;
+      margin-top: 0.95rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .contact-points li {
+      color: var(--contact-point);
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .contact-points i { width: 18px; color: var(--brand); text-align: center; }
+
+    .contact-social {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.58rem;
+    }
+
+    .contact-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: var(--social-bg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-3);
+      transition: 0.2s ease;
+    }
+
+    .contact-social a:hover {
+      color: var(--inverse-text);
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .contact-form { display: grid; gap: 0.74rem; }
+
+    .contact-form label {
+      font-size: 0.87rem;
+      font-weight: 800;
+      color: var(--form-label);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      padding: 0.72rem 0.8rem;
+      border: 1px solid var(--input-border);
+      border-radius: 11px;
+      outline: none;
+      background: var(--input-bg);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(20, 100, 255, 0.15);
+    }
+
+    .contact-form textarea { min-height: 128px; resize: vertical; }
+
+    footer {
+      padding: 1.2rem 0 2.2rem;
+      text-align: center;
+      color: var(--footer-text);
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1.1rem;
+      bottom: 1.1rem;
+      z-index: 950;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(140deg, var(--brand), var(--brand-2));
+      color: var(--inverse-text);
+      box-shadow: 0 12px 26px rgba(20, 100, 255, 0.38);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    .back-to-top.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    @media (max-width: 1100px) {
+      .nav-links { gap: 0.75rem; }
+      .nav-links a { font-size: 0.89rem; }
+      .theme-toggle span { display: none; }
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        padding: 0.2rem;
       }
+    }
 
-      .edu-box {
-        max-width: 100% !important;
-        flex-direction: column !important;
+    @media (max-width: 1024px) {
+      .container { width: min(1120px, 94vw); }
+      .hero { grid-template-columns: 1fr; gap: 1.7rem; padding-top: 7.2rem; }
+      .hero-media { order: -1; }
+      .hero > div:first-child { text-align: center; }
+      .hero p { margin-inline: auto; }
+      .cta-row, .hero-chips, .social-row { justify-content: center; }
+      .about-grid, .skills-layout, .contact-grid { grid-template-columns: 1fr; }
+      .education-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .achievements-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 820px) {
+      .nav-wrap { min-height: 70px; }
+      .theme-toggle span { display: none; }
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
+        padding: 0.2rem;
+      }
+      .nav-toggle { display: inline-flex; }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 0.55rem);
+        right: 0;
+        width: min(360px, 90vw);
+        max-height: min(70vh, 510px);
+        overflow-y: auto;
+        background: var(--menu-bg);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 0.8rem;
+        display: none;
+        flex-direction: column;
         align-items: flex-start;
-        margin: 20px 0;
-        text-align: left !important;
+        gap: 0.3rem;
       }
 
-      .edu-box img {
-        margin: 10px 0 0 0;
-        width: 80px;
+      .nav-links.open { display: flex; }
+      .nav-links a { width: 100%; padding: 0.65rem 0.2rem; }
+      .education-grid, .achievements-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(1120px, 93vw); }
+      .hero { padding-top: 6.6rem; gap: 1.2rem; }
+      .hero-chip { font-size: 0.78rem; }
+      .cta-row .btn { width: 100%; }
+      .floating-note { right: 8px; bottom: 10px; font-size: 0.75rem; }
+      .about-list { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .projects-grid, .cert-grid { grid-template-columns: 1fr; }
+      .panel, .edu-card, .achievement-card { padding: 0.95rem; }
+    }
+
+    @media (max-width: 460px) {
+      .section { padding: 1.2rem 0; }
+      .hero h1 { font-size: clamp(1.8rem, 10vw, 2.5rem); }
+      .achievement-number { font-size: 1.7rem; }
+      .back-to-top { right: 0.7rem; bottom: 0.8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
 </head>
 <body>
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-  <section class="education-section">
-    <h2 id="flip-heading" style="color: #1c1c1c;"
-    data-aos="flip-left"
-    data-aos-duration="1000">
-  Academic <span style="color: #0077cc;">Background</span>
-</h2>
-
-    <div class="edu-box left" data-aos="fade-right">
-     <!-- Your Education Section -->
-<div class="edu-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-  <h3 data-aos="fade-right" data-aos-duration="800">Bachelor's of Technology</h3>
-  <p data-aos="fade-left" data-aos-duration="800"><strong>Computer Science And Engineering</strong></p>
-  <p data-aos="zoom-in" data-aos-duration="800">Aditya College of Engineering and Technology</p>
-  <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400"><strong>2022 - 2026</strong> | Pursuing</p>
-</div>
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747922608/logo626870621544_wgfmtc.png" data-aos="fade-left" data-aos-duration="800"  alt="B.Tech Logo" />
-    </div>
-
-    <div class="edu-box right" data-aos="fade-left">
-      <div class="edu-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <h3 data-aos="fade-left" data-aos-duration="800">Intermediate</h3>
-        <p  data-aos="fade-right" data-aos-duration="800"><strong>Sri Hanumataraya Junior College</strong></p>
-        <p data-aos="zoom-in" data-aos-duration="800">Board of Intermediate Education</p>
-        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400"><strong>2020 - 2022</strong> | Completed</p>
+  <nav class="site-nav">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home">Chandu<span>.dev</span></a>
+      <div class="nav-actions">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" aria-pressed="false">
+          <i class="fa-solid fa-moon"></i>
+          <span>Dark</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747928824/cropped_image_2_raf0p2.png" alt="Intermediate Logo" />
     </div>
+  </nav>
 
-    <div class="edu-box left" data-aos="fade-right">
-      <div class="edu-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-        <h3  data-aos="fade-left" data-aos-duration="800">Secondary Education</h3>
-        <p  data-aos="fade-right" data-aos-duration="800"><strong>Z.P.High School</strong></p>
-        <p data-aos="zoom-in" data-aos-duration="800">Board of Secondary Education</p>
-        <p  data-aos="fade-up" data-aos-duration="800" data-aos-delay="400"><strong>2020</strong> | Completed</p>
+  <header id="home" class="container hero">
+    <div data-aos="fade-right" data-aos-duration="900">
+      <div class="hero-tag"><i class="fa-solid fa-sparkles"></i> Portfolio 2026</div>
+      <h1>Abbireddy <span>Venkata Chandu</span></h1>
+      <p class="role-line">I am an <span class="dynamic-role" id="dynamicRole">Aspiring Software Engineer</span></p>
+      <p>
+        I build responsive web experiences and practical AI/ML solutions with a focus on clean architecture,
+        strong UI quality, and measurable user impact.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects"><i class="fa-solid fa-diagram-project"></i> View Projects</a>
+        <a class="btn btn-secondary" href="https://drive.google.com/uc?export=download&id=1B_3ryT8o5SqlNByCytgrndjKlU5fpxdz" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-download"></i> Download Resume
+        </a>
+        <a class="btn btn-secondary" href="#contact"><i class="fa-solid fa-envelope"></i> Contact Me</a>
       </div>
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747928661/cropped_image_1_fgcann.png" alt="School Logo" />
+      <div class="hero-chips">
+        <span class="hero-chip">B.Tech CSE (2022 - 2026)</span>
+        <span class="hero-chip">Open to Internship</span>
+        <span class="hero-chip">Kakinada, India</span>
+      </div>
+      <div class="social-row">
+        <a href="https://www.linkedin.com/in/chandu0706/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/venkat-0706" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://leetcode.com/venkat-0706/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+        <a href="https://auth.geeksforgeeks.org/user/chanduabbireddy0706/" target="_blank" rel="noopener noreferrer" aria-label="GeeksforGeeks"><i class="fa-solid fa-laptop-code"></i></a>
+      </div>
     </div>
+    <div class="hero-media" data-aos="fade-left" data-aos-duration="900" data-aos-delay="120">
+      <div class="avatar-frame">
+        <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747637111/cropped_image_icg2th.png" alt="Abbireddy Venkata Chandu portrait">
+        <span class="floating-note"><i class="fa-solid fa-circle-check"></i> Available for internships</span>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+    <section class="section" id="about">
+      <div class="section-head" data-aos="fade-up">
+        <p>About</p>
+        <h2>Professional Summary</h2>
+      </div>
+      <div class="about-grid">
+        <article class="panel about-text" data-aos="fade-right">
+          <p>
+            I am an aspiring Software Development Engineer and Data Analyst with strong foundations in Python,
+            C++, Java, SQL, Data Structures, Algorithms, and Object-Oriented Programming.
+          </p>
+          <p>
+            I enjoy building scalable software and extracting useful insights from data. My recent work spans
+            frontend apps, cloud architecture, NLP, and machine learning projects.
+          </p>
+          <ul class="about-list">
+            <li><i class="fa-solid fa-envelope"></i> chanduabbireddy247@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i> +91 9640186272</li>
+            <li><i class="fa-solid fa-location-dot"></i> Kakinada, India</li>
+            <li><i class="fa-solid fa-graduation-cap"></i> Graduation: May 2026</li>
+            <li><i class="fa-solid fa-building-columns"></i> Aditya College of Engineering and Technology</li>
+            <li><i class="fa-solid fa-briefcase"></i> Open for internships and projects</li>
+          </ul>
+        </article>
+        <aside class="panel" data-aos="fade-left">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-value" data-counter="550" data-suffix="+">0+</span>
+              <span class="stat-label">LeetCode Problems</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" data-counter="300" data-suffix="+">0+</span>
+              <span class="stat-label">GeeksforGeeks Problems</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" data-counter="2000" data-suffix="+">0+</span>
+              <span class="stat-label">GitHub Commits</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" data-counter="90" data-suffix="+">0+</span>
+              <span class="stat-label">Contribution Streak Days</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
+    <section class="section" id="education">
+      <div class="section-head" data-aos="fade-up">
+        <p>Education</p>
+        <h2>Academic Background</h2>
+      </div>
+      <div class="education-grid">
+        <article class="edu-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="edu-head">
+            <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747922608/logo626870621544_wgfmtc.png" alt="Aditya College logo">
+            <h3>Bachelor of Technology</h3>
+          </div>
+          <p><strong>Computer Science and Engineering</strong></p>
+          <p>Aditya College of Engineering and Technology</p>
+          <p class="edu-year">2022 - 2026 | Pursuing</p>
+        </article>
+        <article class="edu-card" data-aos="fade-up" data-aos-delay="90">
+          <div class="edu-head">
+            <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747928824/cropped_image_2_raf0p2.png" alt="Intermediate college logo">
+            <h3>Intermediate</h3>
+          </div>
+          <p><strong>Sri Hanumataraya Junior College</strong></p>
+          <p>Board of Intermediate Education</p>
+          <p class="edu-year">2020 - 2022 | Completed</p>
+        </article>
+        <article class="edu-card" data-aos="fade-up" data-aos-delay="180">
+          <div class="edu-head">
+            <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747928661/cropped_image_1_fgcann.png" alt="School logo">
+            <h3>Secondary Education</h3>
+          </div>
+          <p><strong>Z.P. High School</strong></p>
+          <p>Board of Secondary Education</p>
+          <p class="edu-year">2020 | Completed</p>
+        </article>
+      </div>
+    </section>
 
-  <!-- AOS Script -->
+    <section class="section" id="skills">
+      <div class="section-head" data-aos="fade-up">
+        <p>Skills</p>
+        <h2>Technical Strengths</h2>
+      </div>
+      <div class="skills-layout">
+        <article class="panel skills-box" data-aos="fade-right">
+          <h3>Core Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <header><span>Python</span><span>90%</span></header>
+              <div class="bar"><span data-level="90%"></span></div>
+            </div>
+            <div class="skill-row">
+              <header><span>C++</span><span>85%</span></header>
+              <div class="bar"><span data-level="85%"></span></div>
+            </div>
+            <div class="skill-row">
+              <header><span>HTML/CSS</span><span>90%</span></header>
+              <div class="bar"><span data-level="90%"></span></div>
+            </div>
+            <div class="skill-row">
+              <header><span>JavaScript</span><span>75%</span></header>
+              <div class="bar"><span data-level="75%"></span></div>
+            </div>
+            <div class="skill-row">
+              <header><span>SQL</span><span>80%</span></header>
+              <div class="bar"><span data-level="80%"></span></div>
+            </div>
+            <div class="skill-row">
+              <header><span>AWS</span><span>70%</span></header>
+              <div class="bar"><span data-level="70%"></span></div>
+            </div>
+          </div>
+        </article>
+        <article class="panel skills-box" data-aos="fade-left">
+          <h3>Tech Stack</h3>
+          <div class="skill-tags">
+            <span>C</span><span>C++</span><span>Java</span><span>Python</span><span>HTML</span><span>CSS</span>
+            <span>JavaScript</span><span>Bootstrap</span><span>SQL</span><span>MySQL</span><span>MongoDB</span>
+            <span>Firebase</span><span>AWS</span><span>Azure</span><span>GCP</span><span>Heroku</span>
+            <span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span><span>NLP</span><span>Git</span>
+            <span>GitHub</span><span>VS Code</span><span>Jupyter</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-head" data-aos="fade-up">
+        <p>Projects</p>
+        <h2>Selected Work</h2>
+      </div>
+      <div class="filters" data-aos="fade-up" data-aos-delay="50">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">ML/DS</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="cloud">Cloud</button>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card" data-category="ml" data-aos="fade-up">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747760232/sddefault_jogely.jpg" alt="AutoText GPT preview">
+          <div class="card-body">
+            <h3>AutoText-GPT</h3>
+            <p>Next-word prediction using Transformers and GPT-2 with tokenizer preprocessing and model evaluation.</p>
+            <div class="mini-tags"><span>Python</span><span>NLP</span><span>GPT-2</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://colab.research.google.com/drive/1Dl739Y-r1DMc-7pOdhvjDEE25Api60Uj" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Colab</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="web ml" data-aos="fade-up" data-aos-delay="60">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1749719323/speech-to-text-4_k6z6cg.png" alt="Speech recognition preview">
+          <div class="card-body">
+            <h3>Real-Time Speech Recognition and Translator</h3>
+            <p>Live speech-to-text conversion using the Web Speech API with a clean, interactive browser interface.</p>
+            <div class="mini-tags"><span>JavaScript</span><span>Web API</span><span>UI</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/SpeechToTextConversion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://venkat-0706.github.io/SpeechToTextConversion/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="120">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747839380/preview_nigpxc.png" alt="Flavor Fusion preview">
+          <div class="card-body">
+            <h3>Flavor Fusion</h3>
+            <p>Modern restaurant website with responsive UI, smooth interactions, and polished front-end execution.</p>
+            <div class="mini-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/FlavorFusion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://venkat-0706.github.io/FlavorFusion/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="cloud" data-aos="fade-up">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747792740/orpxpmsxcw9ldjbtdd6g.png" alt="AWS VPC architecture preview">
+          <div class="card-body">
+            <h3>AWS VPC with Public and Private Subnets</h3>
+            <p>Secure and scalable VPC design across availability zones with load balancing, NAT, and autoscaling setup.</p>
+            <div class="mini-tags"><span>AWS</span><span>Networking</span><span>Architecture</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Profile</a>
+              <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1747792740/orpxpmsxcw9ldjbtdd6g.png" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-image"></i> Diagram</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="60">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747840308/1733673996852_cp4l1p.jpg" alt="Movie rating prediction preview">
+          <div class="card-body">
+            <h3>Movie Rating Prediction</h3>
+            <p>Machine learning models for rating prediction using movie metadata and user behavior patterns.</p>
+            <div class="mini-tags"><span>ML</span><span>Regression</span><span>Python</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/Movie-Rating-Prediction" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://colab.research.google.com/drive/10mF3kQpDPUtoDqPbtRwQrOUVmC9DoqaH" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Colab</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="120">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747842000/images_phj9ne.jpg" alt="Cricket field preview">
+          <div class="card-body">
+            <h3>Cricket Field Positions</h3>
+            <p>Interactive Konva.js canvas for player placement with drag controls, labels, and boundary constraints.</p>
+            <div class="mini-tags"><span>JavaScript</span><span>Konva.js</span><span>UI Tool</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/Cricket-Feild" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://venkat-0706.github.io/Cricket-Feild/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ml web" data-aos="fade-up">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747842337/Sentiment_analysis_dashboard_axwowz.png" alt="Twalyze preview">
+          <div class="card-body">
+            <h3>Twalyze</h3>
+            <p>Twitter sentiment classification pipeline to detect mood and opinion trends for social media analytics.</p>
+            <div class="mini-tags"><span>NLP</span><span>Scikit-Learn</span><span>Dashboard</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/Twalyze" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://colab.research.google.com/github/venkat-0706/Twalyze/blob/main/Twitter_Sentiment_Analysis_Using_Machine_Learning.ipynb" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Notebook</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ml" data-aos="fade-up" data-aos-delay="60">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1738914982/face_emotion_u8gahj.png" alt="Face expression recognition preview">
+          <div class="card-body">
+            <h3>Face Expression Recognition</h3>
+            <p>PyTorch-based emotion classification workflow for facial expression understanding from image samples.</p>
+            <div class="mini-tags"><span>PyTorch</span><span>Computer Vision</span><span>Deep Learning</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/EmotionXpert-PyTorch" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://colab.research.google.com/github/venkat-0706/FaceExpressionRecognition-Pytorch/blob/main/Facial_Expression_Recognition_with_PyTorch.ipynb" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Notebook</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="web ml" data-aos="fade-up" data-aos-delay="120">
+          <img class="project-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747843744/maxresdefault_zdaana.jpg" alt="Amazon web scraper preview">
+          <div class="card-body">
+            <h3>Amazon Web Scraper</h3>
+            <p>Automated extraction of product prices, ratings, and review signals for comparative analysis tasks.</p>
+            <div class="mini-tags"><span>Python</span><span>BeautifulSoup</span><span>Data Collection</span></div>
+            <div class="card-links">
+              <a href="https://github.com/venkat-0706/Amazon-WebScraper" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+              <a href="https://github.com/venkat-0706/Amazon-WebScraper" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Repo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="section-head" data-aos="fade-up">
+        <p>Certifications</p>
+        <h2>Credentials</h2>
+      </div>
+      <div class="cert-grid">
+        <article class="cert-card" data-aos="fade-up">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480206/java_xvskyu.jpg" alt="Software Engineer certificate">
+          <div class="card-body">
+            <h3>HackerRank Software Engineer</h3>
+            <p>Advanced coding, DSA, and problem-solving assessment certification.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480206/java_xvskyu.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up" data-aos-delay="70">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480199/ds_mxmii7.jpg" alt="SQL certificate">
+          <div class="card-body">
+            <h3>HackerRank SQL Advanced</h3>
+            <p>Complex queries, joins, subqueries, and window function proficiency.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480199/ds_mxmii7.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up" data-aos-delay="140">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522677/web_msvfwh.jpg" alt="Web development certificate">
+          <div class="card-body">
+            <h3>Web Development - Teachnook</h3>
+            <p>Hands-on web foundations: HTML, CSS, JavaScript, and responsive UI design.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522677/web_msvfwh.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480207/se_q7ypdz.jpg" alt="Java certificate">
+          <div class="card-body">
+            <h3>HackerRank Java</h3>
+            <p>Core Java concepts, OOP, and coding challenge-based validation.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480207/se_q7ypdz.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up" data-aos-delay="70">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733478555/cnnn_yyvdqa.jpg" alt="Python certificate">
+          <div class="card-body">
+            <h3>Certiport Python</h3>
+            <p>Python fundamentals, problem-solving, and real-world coding scenarios.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733478555/cnnn_yyvdqa.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up" data-aos-delay="140">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480133/cham_ujivtc.jpg" alt="Problem solving certificate">
+          <div class="card-body">
+            <h3>HackerRank Problem Solving</h3>
+            <p>Intermediate-level algorithmic and optimization challenge completion.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480133/cham_ujivtc.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747987366/1747987272925-certificate_kddcrn.jpg" alt="AWS certificate">
+          <div class="card-body">
+            <h3>AWS Course - Aajhub</h3>
+            <p>Cloud services, storage, deployment, and security fundamentals.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1747987366/1747987272925-certificate_kddcrn.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+        <article class="cert-card" data-aos="fade-up" data-aos-delay="70">
+          <img class="cert-thumb" src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733526102/info_quku6n.jpg" alt="Infosys certificate">
+          <div class="card-body">
+            <h3>Infosys Springboard - Software Engineer</h3>
+            <p>Software development foundations with practical assessments.</p>
+            <div class="card-links"><a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733526102/info_quku6n.jpg" target="_blank" rel="noopener noreferrer">View Certificate</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="achievements">
+      <div class="section-head" data-aos="fade-up">
+        <p>Achievements</p>
+        <h2>Highlights</h2>
+      </div>
+      <div class="achievements-grid">
+        <article class="achievement-card" data-aos="fade-up">
+          <h3>LeetCode</h3>
+          <div class="achievement-number" data-counter="550" data-suffix="+">0+</div>
+          <p>Problems solved with strong consistency across major DSA topics.</p>
+          <a href="https://leetcode.com/u/venkat-0706/" target="_blank" rel="noopener noreferrer">View Profile</a>
+        </article>
+        <article class="achievement-card" data-aos="fade-up" data-aos-delay="90">
+          <h3>GeeksforGeeks</h3>
+          <div class="achievement-number" data-counter="300" data-suffix="+">0+</div>
+          <p>Competitive practice with strong rank performance in campus leaderboard.</p>
+          <a href="https://www.geeksforgeeks.org/user/chanduabbireddy0706/" target="_blank" rel="noopener noreferrer">View Profile</a>
+        </article>
+        <article class="achievement-card" data-aos="fade-up" data-aos-delay="180">
+          <h3>GitHub</h3>
+          <div class="achievement-number" data-counter="2000" data-suffix="+">0+</div>
+          <p>Commit activity, open-source participation, and sustained contribution streak.</p>
+          <a href="https://github.com/venkat-0706" target="_blank" rel="noopener noreferrer">View Profile</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-head" data-aos="fade-up">
+        <p>Contact</p>
+        <h2>Get In Touch</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="panel" data-aos="fade-right">
+          <p>
+            I am currently looking for internship opportunities and project collaborations.
+            Send me a message and I will get back to you quickly.
+          </p>
+          <ul class="contact-points">
+            <li><i class="fa-solid fa-phone"></i> +91 9640186272</li>
+            <li><i class="fa-solid fa-envelope"></i> chanduabbireddy247@gmail.com</li>
+            <li><i class="fa-solid fa-location-dot"></i> Kakinada, India</li>
+          </ul>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/chandu0706/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/venkat-0706" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="mailto:chanduabbireddy247@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://wa.me/919640186272" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://leetcode.com/venkat-0706/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+          </div>
+        </article>
+        <article class="panel" data-aos="fade-left">
+          <form class="contact-form" action="https://formspree.io/f/xqaqjlyn" method="POST">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="_replyto" type="email" placeholder="Your email address" required>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Copyright <span id="year"></span> Abbireddy Venkata Chandu. Built with HTML, CSS, JS, and AOS.
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-  </section>
-
-
-
-
-
-
-   <!-- Skills Section -->
-  <!-- Font Awesome CDN (if not included already) -->
-<!-- Skills Section -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-<!-- AOS CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<!-- AOS JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<section id="skills"  data-aos="zoom-in" class="animated animated-delay-3">
-<h2 style="text-align: center;"
-    data-aos="flip-right"
-    data-aos-duration="1000"
-    data-aos-delay="300"
-    data-aos-once="false">
-  I'm Confident In
-</h2>
- 
-  <div class="box-grid animated animated-delay-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" tabindex="0">
-
-
-    <!-- Languages -->
-    <div class="box" data-aos="fade-up" data-aos-duration="800" tabindex="0">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-code"></i> Languages:
-  </strong><br />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
- <div class="skill-item" data-aos="fade-left" data-aos-delay="750" data-aos-duration="700">
-  <i class="devicon-c-plain"></i> C
-  <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-  <span class="percentage">85%</span>
-</div>
-
-
-  <div class="skill-item cpp-icon" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-    C++
-    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-    <span class="percentage">85%</span>
-  </div>
-
-
-   <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-    <i class="fab fa-java"></i> Java
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">80%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fab fa-python"></i> Python
-    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-    <span class="percentage">90%</span>
-  </div>
-
-
-
-
-</div>
-
-
-    <!-- Web Tech -->
-    <div class="box" tabindex="0" data-aos="fade-up" data-aos-duration="800">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-laptop-code"></i> Web Tech:
-  </strong><br />
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fab fa-html5"></i> HTML
-    <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-    <span class="percentage">90%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-    <i class="fab fa-css3-alt"></i> CSS
-    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-    <span class="percentage">85%</span>
-  </div>
-
- 
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="550" data-aos-duration="700">
-    <i class="fab fa-bootstrap"></i> Bootstrap
-    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-    <span class="percentage">80%</span>
-  </div>
-
-
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="750" data-aos-duration="700">
-    <i class="fas fa-flask"></i> JavaScript
-    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-    <span class="percentage">60%</span>
-  </div>
-</div>
-
-
-    <!-- Databases -->
-    <div class="box" tabindex="0" data-aos="fade-up" data-aos-duration="800">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-database"></i> Databases:
-  </strong><br />
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fas fa-database"></i> SQL
-    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-    <span class="percentage">75%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-    <i class="fas fa-database"></i> MySQL
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">70%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-    <i class="fas fa-leaf"></i> MongoDB
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
-
-
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-  <i class="devicon-firebase-plain"></i> Firebase
-  <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-  <span class="percentage">70%</span>
-</div>
-
- 
-</div>
-
-
-    <!-- Cloud -->
-    <div class="box" tabindex="0" data-aos="fade-up" data-aos-duration="800">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-cloud"></i> Cloud:
-  </strong><br />
-  
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fab fa-aws"></i> AWS
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">70%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-    <i class="fab fa-microsoft"></i> Azure
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-    <i class="fab fa-google"></i> GCP
-    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-    <span class="percentage">60%</span>
-  </div>
-   
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="700">
-  <i class="devicon-heroku-plain"></i> Heroku
-  <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-  <span class="percentage">65%</span>
-</div>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-
-</div>
-
-
-    <!-- DS/ML -->
-    <div class="box" tabindex="0" data-aos="fade-up" data-aos-duration="800">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-robot"></i> DS/ML:
-  </strong><br />
-
-
- <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-  <i class="devicon-pytorch-original"></i> PyTorch
-  <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-  <span class="percentage">75%</span>
-</div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="350" data-aos-duration="700">
-    <i class="fas fa-brain"></i> Scikit-Learn
-    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-    <span class="percentage">70%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="450" data-aos-duration="700">
-    <i class="fas fa-robot"></i> TensorFlow
-    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-    <span class="percentage">65%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="550" data-aos-duration="700">
-    <i class="fas fa-comments"></i> NLP
-    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-    <span class="percentage">60%</span>
-  </div>
-
-
-</div>
-
-
-    <!-- Tools -->
-  
-<div class="box" tabindex="0" data-aos="fade-up" data-aos-duration="800">
-  <strong data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
-    <i class="fas fa-tools"></i> Tools:
-  </strong><br />
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-    <i class="fab fa-git-alt"></i> Git
-    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-    <span class="percentage">80%</span>
-  </div>
-
-  <div class="skill-item" data-aos="fade-left" data-aos-delay="150" data-aos-duration="700">
-  <i class="devicon-github-original"></i> GitHub
-  <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-  <span class="percentage">85%</span>
-</div>
-
-
- <div class="skill-item" data-aos="fade-left" data-aos-delay="300" data-aos-duration="700">
-  <i class="devicon-vscode-plain"></i> VS Code
-  <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-  <span class="percentage">90%</span>
-</div>
-
-<div class="skill-item"  data-aos="fade-left" data-aos-delay="300" data-aos-duration="700">
-    <i class="fab fa-python"></i> Jupyter Notebook
-    <div class="progress-bar">
-        <div class="progress" style="width: 80%;"></div>
-    </div>
-    <span class="percentage">80%</span>
-</div>
-
-
-
-</div>
-
-  </div>
-</section>
-
-
-  <style>
-    /* your existing styles ... */
-
-    /* Progress bar container */
-    .skill-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.8rem;
-      font-weight: 500;
-      color: #004b8d;
-      position: relative;
-      gap: 10px;
-    }
-
-    .skill-item i {
-      margin-right: 0.35rem;
-      color: #007bff;
-      min-width: 16px;
-      font-size: 1rem;
-    }
-
-    /* Progress bar background */
-    .progress-bar {
-      flex: 1;
-      height: 8px;
-      background: #dbe7ff;
-      border-radius: 10px;
-      margin: 0 12px;
-      overflow: hidden;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    /* Progress fill */
-    .progress {
-      height: 100%;
-      background: #007bff;
-      border-radius: 10px 0 0 10px;
-      transition: width 0.5s ease;
-    }
-
-    /* Percentage text */
-    .percentage {
-      min-width: 35px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: #004b8d;
-      user-select: none;
-      white-space: nowrap;
-    }
-
-    /* Keep C++ icon styling as before */
-    .cpp-icon {
-      position: relative;
-      font-weight: 700;
-      color: #004b8d;
-      padding-left: 22px;
-    }
-    .cpp-icon::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      background: url('data:image/svg+xml;utf8,<svg fill="%23007bff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M54.2 0H11.8C5.3 0 0 5.4 0 12v56c0 6.6 5.3 12 11.8 12h42.4c6.5 0 11.8-5.4 11.8-12V12c0-6.6-5.3-12-11.8-12zM622.1 64.1H454.5l-25 44.7-21.6-21.7 59.7-58.3c8-7.9 3.3-22.2-8.8-22.2H485c-6.6 0-12-5.4-12-12V12c0-6.6 5.4-12 12-12h42.5c29 0 52.7 23.8 52.7 53v11.2c0 5.5-2.1 10.6-5.1 14.1z"/></svg>') no-repeat center;
-      background-size: contain;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 480px) {
-      .skill-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+    AOS.init({
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 70,
+      anchorPlacement: "top-bottom"
+    });
+
+    const themeToggle = document.getElementById("themeToggle");
+    const themeStorageKey = "portfolio-theme";
+    const applyTheme = (theme) => {
+      const isDark = theme === "dark";
+      document.body.dataset.theme = isDark ? "dark" : "light";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i><span>Light</span>'
+        : '<i class="fa-solid fa-moon"></i><span>Dark</span>';
+    };
+
+    const preferredTheme = (() => {
+      try {
+        return localStorage.getItem(themeStorageKey);
+      } catch {
+        return null;
       }
-      .progress-bar {
-        width: 100%;
-        margin: 0 0 0 0;
+    })();
+    const initialTheme = preferredTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    applyTheme(initialTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      try {
+        localStorage.setItem(themeStorageKey, nextTheme);
+      } catch {
+        // Storage may be disabled in private browsing mode.
       }
-      .percentage {
-        min-width: auto;
-        font-size: 0.85rem;
+    });
+
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+    const closeNavMenu = () => {
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    };
+
+    navToggle.addEventListener("click", () => {
+      const expanded = navLinks.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(expanded));
+      navToggle.innerHTML = expanded
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    document.querySelectorAll("#navLinks a").forEach((anchor) => {
+      anchor.addEventListener("click", () => {
+        closeNavMenu();
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (window.innerWidth > 820 || !navLinks.classList.contains("open")) return;
+      if (!navLinks.contains(event.target) && !navToggle.contains(event.target)) {
+        closeNavMenu();
       }
-    }
-  </style>
-</section>
+    });
 
-  <!-- Projects Section -->
-  <section id="projects" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
- 
-<h2 id="fade-down" style="color: #1c1c1c;"
-    data-aos="fade-up"
-    data-aos-duration="1000">
-  Proj<span style="color: #0077cc;">ects</span>
-</h2>
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 820) closeNavMenu();
+    });
 
+    const roleItems = [
+      "Aspiring Software Engineer",
+      "Front-End Developer",
+      "AI and ML Enthusiast",
+      "Data Analyst"
+    ];
+    const dynamicRole = document.getElementById("dynamicRole");
+    let roleIndex = 0;
+    setInterval(() => {
+      dynamicRole.classList.add("swap");
+      setTimeout(() => {
+        roleIndex = (roleIndex + 1) % roleItems.length;
+        dynamicRole.textContent = roleItems[roleIndex];
+        dynamicRole.classList.remove("swap");
+      }, 180);
+    }, 2200);
 
-
-  <div class="project-filters">
-    <button class="filter-btn active" data-filter="all" data-aos="fade-up" data-aos-delay="450" data-aos-duration="600">All Projects</button>
-    <button class="filter-btn" data-filter="ml" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">ML & DS</button>
-    <button class="filter-btn" data-filter="webdev" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">Web Development</button>
-    <button class="filter-btn" data-filter="cloud" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">Cloud</button>
-    <button class="filter-btn" data-filter="game" data-aos="fade-up" data-aos-delay="700" data-aos-duration="600">Game Development</button>
-  </div>
-
-
-
-  <div class="box-grid" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="1050">
-    <div class="box" data-category="ml" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747760232/sddefault_jogely.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">AutoText-GPT</strong>
-      <p data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">Next-word prediction project using Transformers and GPT-2. It utilizes GPTTokenizer for input preprocessing and evaluates the fine-tuned model with accuracy, perplexity, and fluency metrics to ensure precise and natural language predictions.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/yourusername/autotext-gpt" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://colab.research.google.com/drive/1Dl739Y-r1DMc-7pOdhvjDEE25Api60Uj" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-
-
-      <div class="box" data-category="ml" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1749719323/speech-to-text-4_k6z6cg.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">RealTime Speech Recognition and Translator</strong>
-      <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">A web app that uses JavaScript and Web Speech API to convert live voice input into text in real-time. Features a simple UI with microphone access for interactive, accurate speech-to-text transcription.
-
-</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/SpeechToTextConversion" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://venkat-0706.github.io/SpeechToTextConversion/" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-
-    <div class="box" data-category="ml" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747839380/preview_nigpxc.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1300" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Flavour Fusion</strong>
-      <p data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000">FlavorFusion is a modern and responsive restaurant website built using HTML, CSS, and JavaScript. It features a sleek and elegant design, interactive user interface, smooth navigation, and ensures a seamless and engaging user experience across devices.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/FlavorFusion" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://venkat-0706.github.io/FlavorFusion/" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-
-
-
-    <div class="box" data-category="webdev" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747792740/orpxpmsxcw9ldjbtdd6g.png" alt="Twalyze" data-aos="fade-right" data-aos-delay="1600" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">AWS VPC with Public and Private Subnets</strong>
-      <p data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">This project builds a secure and scalable AWS VPC featuring public and private subnets across two availability zones. It incorporates load balancers, auto scaling groups, and NAT gateways to ensure high availability, security, and efficient resource management.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/yourusername/twalyze" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://twalyze.live" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-
-
-
-    <div class="box" data-category="cloud" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747840308/1733673996852_cp4l1p.jpg" alt="Twalyze" data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Movie Rating Prediction</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Movie rating prediction uses machine learning algorithms to forecast user ratings based on historical data, movie features, and individual preferences. Common models include Linear Regression, Random Forest, and Neural Networks, providing personalized and accurate rating predictions.
-</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/Movie-Rating-Prediction" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://colab.research.google.com/drive/10mF3kQpDPUtoDqPbtRwQrOUVmC9DoqaH" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-category="webdev" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747842000/images_phj9ne.jpg" alt="Twalyze" data-aos="fade-right" data-aos-delay="1300" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Cricket Field Positions</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">This code creates an interactive cricket field using Konva.js, enabling users to add and drag players with editable labels. It enforces movement boundaries and player limits to ensure a realistic and user-friendly experience for team positioning and strategy planning.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/Cricket-Feild" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://venkat-0706.github.io/Cricket-Feild/" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-category="webdev" data-aos="fade-dowm" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747842337/Sentiment_analysis_dashboard_axwowz.png" alt="Twalyze" data-aos="fade-left" data-aos-delay="1600" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Twalyze</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Twitter Sentiment Analysis project leverages machine learning to classify tweets and detect user moods, opinions, and behavior patterns in real time. It provides actionable insights for brands, campaigns, and trend analysis across social media platforms.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/yourusername/twalyze" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://colab.research.google.com/github/venkat-0706/Twalyze/blob/main/Twitter_Sentiment_Analysis_Using_Machine_Learning.ipynb" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-category="webdev" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1738914982/face_emotion_u8gahj.png" alt="Twalyze" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Face Expression Recognition</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Twitter sentiment analysis project using machine learning to classify tweets and understand user mood, opinions, and behavior patterns in real time for actionable social media insights.</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/EmotionXpert-PyTorch" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://colab.research.google.com/github/venkat-0706/FaceExpressionRecognition-Pytorch/blob/main/Facial_Expression_Recognition_with_PyTorch.ipynb" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-category="webdev" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747843744/maxresdefault_zdaana.jpg" alt="Movie Rating Prediction" data-aos="fade-right" data-aos-delay="1600" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Amazon Web Sracper
-</strong>
-     <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-
-      An Amazon web scraper uses tools like BeautifulSoup or Scrapy to extract product data such as prices, reviews, and ratings, supporting market research while ensuring compliance with ethical standards and legal regulations.
-
-</p>
-      <div class="project-links" data-aos="fade-up" data-aos-delay="650" data-aos-duration="600">
-        <a href="https://github.com/venkat-0706/Amazon-WebScraper" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://github.com/venkat-0706/Amazon-WebScraper" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-globe"></i> View
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <style>
-    #projects {
-      padding: 2rem 1rem;
-      background-color: #f9f9f9;
-      font-family: 'Inter', sans-serif;
-    }
-
-    #projects h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      color: #0077cc; /* Blue heading */
-    }
-
-    .project-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .filter-btn {
-      padding: 0.6rem 1.2rem;
-      border: 2px solid #0077cc;
-      border-radius: 25px;
-      background-color: white;
-      color: #0077cc;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background-color: #0077cc;
-      color: white;
-    }
-
-    .box-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .box {
-      background: white;
-      border: 3px solid transparent;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .box:hover {
-      transform: translateY(-5px);
-    }
-
-    .box.show {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .box img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .box strong {
-      display: block;
-      font-size: 1.2rem;
-      margin: 1rem auto 0.5rem;
-      text-align: center;
-      color: #0077cc;
-    }
-
-    .box p {
-      margin: 0 1rem 1rem;
-      color: #555;
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    .project-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0 1rem 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #0077cc;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.3s ease;
-    }
-
-    .project-links a:hover {
-      color: #005fa3;
-    }
-
-    /* 🔵 Border Blink Animation */
-    @keyframes border-blink {
-      0%   { border-color: transparent; }
-      50%  { border-color: #0077cc; }
-      100% { border-color: transparent; }
-    }
-
-    .blink-border {
-      animation: border-blink 0.6s ease;
-    }
-
-    @media (max-width: 600px) {
-      #projects h2 {
-        font-size: 2rem;
-      }
-
-      .box img {
-        height: 160px;
-      }
-
-      .project-links {
-        gap: 1rem;
-      }
-    }
-  </style>
-
-  <script>
-    const filterButtons = document.querySelectorAll('#projects .filter-btn');
-    const projectBoxes = document.querySelectorAll('#projects .box');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.getAttribute('data-filter');
-        projectBoxes.forEach(box => {
-          if (filter === 'all' || box.getAttribute('data-category') === filter) {
-            box.classList.add('show');
-          } else {
-            box.classList.remove('show');
-          }
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        projectCards.forEach((card) => {
+          const categories = card.dataset.category.split(" ");
+          const show = filter === "all" || categories.includes(filter);
+          card.classList.toggle("hidden", !show);
         });
       });
     });
 
-    // Show all projects on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      projectBoxes.forEach(box => box.classList.add('show'));
-    });
-
-    // Animate border on project click
-    projectBoxes.forEach(box => {
-      box.addEventListener('click', () => {
-        box.classList.remove('blink-border');
-        void box.offsetWidth; // force reflow
-        box.classList.add('blink-border');
+    const sectionEls = document.querySelectorAll("main section[id], header#home");
+    const navAnchors = document.querySelectorAll(".nav-links a");
+    const setActiveLink = (id) => {
+      navAnchors.forEach((a) => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id);
       });
-    });
-  </script>
-</section>
-
-
-    <!-- Certifications -->
- <section id="Certifications" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
-  <h2 id="fade-left" style="color: #1c1c1c;"
-    data-aos="fade-right"
-    data-aos-duration="1000">
-  Certifi<span style="color: #0077cc;">cations</span>
-</h2>
-
-  
-  <div class="cert-grid">
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480206/java_xvskyu.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Software Engineer</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Achieved the HackerRank Software Engineer Certificate by successfully demonstrating advanced coding skills, data structures, algorithms, and strong problem-solving abilities through rigorous hands-on programming challenges and assessments.
-
-</p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480206/java_xvskyu.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480199/ds_mxmii7.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">SQL Advanced</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Earned the HackerRank Advanced SQL Certificate by demonstrating strong proficiency in complex SQL queries, joins, subqueries, window functions, and data manipulation techniques through hands-on coding challenges and assessments.
-</p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480199/ds_mxmii7.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-
-      
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522677/web_msvfwh.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Web Development</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Completed Web Development Certification from Teachnook by gaining hands-on experience in HTML, CSS, JavaScript, and responsive design, and building interactive websites and front-end projects through practical learning modules.
-
-</p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522677/web_msvfwh.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522354/cm_vdqery.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Meta Database Engineer
-      </strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
- Completed Coursera’s Metadata Base Engineer Certification, gaining expertise in metadata management, data governance, data modeling, and database systems to ensure efficient data organization, accessibility, and consistency.
-</p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522354/cm_vdqery.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480207/se_q7ypdz.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Java</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
- Earned the Java Certificate from HackerRank by demonstrating strong understanding of core Java concepts, object-oriented programming, data structures, and problem-solving through hands-on coding challenges and assessments.</p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480207/se_q7ypdz.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733478555/cnnn_yyvdqa.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Python</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
- Achieved Python Certification from Certiport by demonstrating proficiency in Python programming fundamentals, including data types, control structures, functions, error handling, and problem-solving through real-world coding scenarios.</p>
-
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733478555/cnnn_yyvdqa.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480133/cham_ujivtc.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Problem Solving</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-Earned the HackerRank Intermediate Problem Solving Certificate by showcasing ability to solve algorithmic challenges, implement efficient logic, and optimize code for performance across various programming problems.</p>
-
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733480133/cham_ujivtc.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747987366/1747987272925-certificate_kddcrn.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">AWS</strong>
-      <p data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
-
-
-        Completed AWS course from Aajhub, gaining hands-on experience with cloud computing, core AWS services, deployment, storage, and security concepts, preparing for real-world applications and cloud-based infrastructure management.
-
-        </p>
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733522677/web_msvfwh.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-    </div>
-    <div class="cert-box" data-aos="fade-left" data-aos-duration="800" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1733526102/info_quku6n.jpg" alt="AutoText-GPT" data-aos="fade-right" data-aos-delay="1000" data-aos-duration="1000"/>
-      <strong data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">Software Engineer</strong>
-      <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Completed the Software Engineer Certification from Infosys Springboard by mastering core software development concepts, coding skills, and problem-solving techniques through practical projects and assessments.</p>
-
-      <div class="cert-links">
-  <a href="https://res.cloudinary.com/dhmixzenl/image/upload/v1733526102/info_quku6n.jpg" target="_blank" rel="noopener noreferrer"
-     data-aos="fade-up" data-aos-duration="600" data-aos-delay="600">
-    <i class="fas fa-globe"></i> View
-  </a>
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-
-  <style>
-    #Certifications {
-      padding: 2rem 1rem;
-      background-color: #fdfdfd;
-      font-family: 'Inter', sans-serif;
-    }
-
-    #Certifications h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #0077cc; /* Blue heading */
-      margin-bottom: 2rem;
-    }
-
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .cert-box {
-      background: #fff;
-      border: 3px solid transparent;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .cert-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .cert-box img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .cert-box strong {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #0077cc;
-      text-align: center;
-    }
-
-    .cert-box p {
-      font-size: 0.95rem;
-      color: #555;
-      text-align: center;
-      margin: 0.5rem 1rem 1rem;
-    }
-
-    .cert-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      padding: 0 1rem 1.2rem;
-      flex-wrap: wrap;
-    }
-
-    .cert-links a {
-      text-decoration: none;
-      color: #0077cc;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.3s ease;
-    }
-
-    .cert-links a:hover {
-      color: #005fa3;
-    }
-
-    /* 🔵 Blue border blink effect */
-    @keyframes border-blink {
-      0% { border-color: transparent; }
-      50% { border-color: #0077cc; }
-      100% { border-color: transparent; }
-    }
-
-    .blink-border {
-      animation: border-blink 0.6s ease;
-    }
-
-    @media (max-width: 600px) {
-      #Certifications h2 {
-        font-size: 2rem;
-      }
-
-      .cert-box img {
-        height: 160px;
-      }
-
-      .cert-links {
-        gap: 0.8rem;
-      }
-    }
-  </style>
-
-  <script>
-    document.querySelectorAll('.cert-box').forEach(box => {
-      box.addEventListener('click', () => {
-        box.classList.remove('blink-border'); // restart animation
-        void box.offsetWidth; // trigger reflow
-        box.classList.add('blink-border');
+    };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActiveLink(entry.target.id);
       });
+    }, {
+      rootMargin: "-45% 0px -45% 0px",
+      threshold: 0.01
     });
-  </script>
-</section>
+    sectionEls.forEach((section) => sectionObserver.observe(section));
 
-
-    <!-- Achivements -->
-<section id="achievements" data-aos="fade-right" data-aos-duration="800">
- <h2 id="fade-right" style="color: #1c1c1c;"
-    data-aos="fade-left"
-    data-aos-duration="1000">
-  Achiv<span style="color: #0077cc;">ements</span>
-</h2>
-
-  <div class="box-grid">
-    <div class="box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747978678/images_lydjz2.jpg" alt="abcd" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="150" />
-      <strong data-aos="fade-left" data-aos-duration="700" data-aos-delay="200">Leetcode</strong>
-      <p data-aos="fade-right" data-aos-duration="700" data-aos-delay="250">Solved 550+ problems on LeetCode, showcasing strong problem-solving skills across data structures and algorithms. Earned 15+ achievement badges, reflecting consistent performance and deep understanding of coding challenges.
-</p>
-      <div class="achievement-links">
-        <a href="https://leetcode.com/u/venkat-0706/" class="live" target="_blank"
-           data-aos="fade-up" data-aos-duration="700" data-aos-delay="350">
-          <i class="fas fa-globe"></i> Live
-        </a>
-      </div>
-    </div>
-
-    <div class="box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747977993/ue2cvvckox9em0aoyzoe.jpg" alt="bcde" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="450" />
-      <strong data-aos="fade-right" data-aos-duration="700" data-aos-delay="500">Geeks For Geeks</strong>
-      <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="550">Solved 300+ problems on GeeksforGeeks, sharpening data structures and algorithms expertise. Secured 8th rank in campus leaderboard, demonstrating consistent coding practice and strong problem-solving capabilities in contests.
-</p>
-      <div class="achievement-links">
-        <a href="https://www.geeksforgeeks.org/user/chanduabbireddy0706/" class="live" target="_blank"
-           data-aos="fade-up" data-aos-duration="700" data-aos-delay="650">
-          <i class="fas fa-globe"></i> Live
-        </a>
-      </div>
-    </div>
-
-
-     <div class="box" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-      <img src="https://res.cloudinary.com/dhmixzenl/image/upload/v1747977577/WhatsApp_Image_2025-05-23_at_10.27.56_2b50c3ad_p78r7q.jpg" alt="bcde" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="450" />
-      <strong data-aos="fade-left" data-aos-duration="700" data-aos-delay="500">Github</strong>
-      <p data-aos="fade-left" data-aos-duration="700" data-aos-delay="550">Completed 2000+ commits and maintained a 90-day contribution streak on GitHub. Earned 300+ stars across repositories, demonstrating consistency, active open-source involvement, and community appreciation for quality projects.
-</p>
-      <div class="achievement-links">
-        <a href="https://github.com/venkat-0706" class="live" target="_blank"
-           data-aos="fade-up" data-aos-duration="700" data-aos-delay="650">
-          <i class="fas fa-globe"></i> Live
-        </a>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-
-
-
-
-
-  <style>
-    #achievements {
-      padding: 2rem 1rem;
-      background-color: #f0f4f8;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    #achievements h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: #004b8d;
-      margin-bottom: 2rem;
-    }
-
-    .box-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .box {
-      background: #ffffff;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-bottom: 1rem; /* added some padding at bottom for spacing */
-    }
-
-    .box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .box img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-    }
-
-    .box strong {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.2rem;
-      color: #004b8d;
-    }
-
-    .box p {
-      margin: 0 1rem 0.5rem;
-      font-size: 0.95rem;
-      color: #444;
-      max-width: 90%;
-    }
-
-    /* Remove box styling from links container */
-    .achievement-links {
-      margin-top: 0.25rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-weight: 600;
-    }
-
-    /* Make links simple text, blue color #007bff, no box or border */
-    .achievement-links a {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-      padding: 0; /* remove padding */
-      border: none; /* remove border */
-      background: none; /* remove background */
-    }
-
-    .achievement-links a:hover {
-      text-decoration: underline;
-      color: #0056b3; /* a darker blue on hover */
-      background: none;
-      box-shadow: none;
-    }
-
-    @media (max-width: 480px) {
-      #achievements h2 {
-        font-size: 2rem;
-      }
-
-      .box p {
-        font-size: 0.9rem;
-      }
-
-      .achievement-links a {
-        font-size: 0.9rem;
-      }
-    }
-  </style>
-</section>
-
-
-
-<!-- Contact -->
-<section id="contact" class="animated animated-delay-5"   data-aos="zoom-in-up" style="background: #f9fbfc; padding: 4rem 2rem;">
-  <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem;">
-    <!-- Left side: Contact Info -->
-    <div style="flex: 1; min-width: 280px;">
-      <h2 id="flip-heading" style="color: #1c1c1c;"
-    data-aos="flip-left"
-    data-aos-duration="1000">
-  Get <span style="color: #0077cc;">in Touch</span>
-</h2>
-
-      <!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-  .contact-info {
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    max-width: 600px;
-    margin: auto;
-    transition: transform 0.3s ease;
-  }
-
-  .contact-info:hover {
-    transform: scale(1.01);
-  }
-
-  .contact-info p {
-    margin: 1rem 0;
-    font-size: 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: color 0.3s ease;
-  }
-
-  .contact-info i {
-    color: #0077cc;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .contact-info p:hover i {
-    transform: scale(1.2);
-    color: #005fa3;
-  }
-
-  @media (max-width: 600px) {
-    .contact-info {
-      padding: 1.5rem;
-    }
-
-    .contact-info p {
-      font-size: 0.95rem;
-    }
-  }
-</style>
-
-<!-- Add AOS attributes here -->
-<div class="contact-info" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-  <p data-aos="fade-right" data-aos-delay="200">
-    I'm currently looking for internship opportunities and project collaborations. Feel free to reach out, and I'll get back to you as soon as possible.
-  </p>
-
-  <p data-aos="fade-left" data-aos-delay="300">
-    <i class="fas fa-phone"></i> +91 9640186272
-  </p>
-  <p data-aos="fade-left" data-aos-delay="400">
-    <i class="fas fa-envelope"></i> chanduabbireddy247@gmail.com
-  </p>
-  <p data-aos="fade-left" data-aos-delay="500">
-    <i class="fas fa-map-marker-alt"></i> Kakinada, India
-  </p>
-</div>
-
-
-
-   <!-- Font Awesome CDN (Include in <head> if not already) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-    .social-icons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 20px;
-    }
-
-    .social-icons a {
-        color: #2196f3; /* blue color for icons */
-        background-color: #ffffff;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        text-decoration: none;
-    }
-
-    .social-icons a:hover {
-        transform: scale(1.15);
-        background-color: #2196f3; /* blue background on hover */
-        color: #fff; /* white icon color on hover */
-        box-shadow: 0 8px 25px rgba(33, 150, 243, 0.3);
-    }
-
-    @media (max-width: 480px) {
-        .social-icons {
-            gap: 15px;
+    const bars = document.querySelectorAll(".bar > span");
+    const barObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.level;
+          obs.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.4 });
+    bars.forEach((bar) => barObserver.observe(bar));
 
-        .social-icons a {
-            width: 45px;
-            height: 45px;
-            font-size: 20px;
+    const counters = document.querySelectorAll("[data-counter]");
+    const animateCounter = (el) => {
+      const target = Number(el.dataset.counter);
+      const suffix = el.dataset.suffix || "";
+      const duration = 1200;
+      let start = null;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const value = Math.floor(progress * target);
+        el.textContent = value.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    const counterObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
         }
-    }
-</style>
+      });
+    }, { threshold: 0.5 });
+    counters.forEach((counter) => counterObserver.observe(counter));
 
-<div class="social-icons" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-  <a href="https://www.linkedin.com/in/chandu0706/" target="_blank" data-aos="fade-right" data-aos-delay="150"><i class="fab fa-linkedin-in"></i></a>
-  <a href="https://github.com/venkat-0706" target="_blank" data-aos="fade-left" data-aos-delay="200"><i class="fab fa-github"></i></a>
-  <a href="mailto:chanduabbireddy247@gmail.com" target="_blank" data-aos="fade-right" data-aos-delay="250" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
-  <a href="https://wa.me/919640186272" target="_blank" data-aos="fade-left" data-aos-delay="300" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.instagram.com/your_username/" target="_blank" data-aos="fade-right" data-aos-delay="350" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://leetcode.com/venkat-0706/" target="_blank" data-aos="fade-left" data-aos-delay="400"><i class="fas fa-code"></i></a>
-  <a href="https://auth.geeksforgeeks.org/user/chanduabbireddy0706/" target="_blank" data-aos="fade-right" data-aos-delay="450"><i class="fas fa-laptop-code"></i></a>
-</div>
+    const progressBar = document.getElementById("scrollProgress");
+    const backToTop = document.getElementById("backToTop");
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const ratio = total > 0 ? (doc.scrollTop / total) * 100 : 0;
+      progressBar.style.width = ratio + "%";
+      backToTop.classList.toggle("show", doc.scrollTop > 450);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-
-    </div>
-
-    <!-- Right side: Contact Form -->
-   <!-- Include Google Fonts (Optional, for modern look) -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-  .contact-form {
-    font-family: 'Inter', sans-serif;
-    flex: 1;
-    min-width: 280px;
-    max-width: 600px;
-    background: #fff;
-    padding: 2rem;
-    margin: auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    transition: transform 0.3s ease;
-  }
-
-  .contact-form:hover {
-    transform: scale(1.01);
-  }
-
-  .contact-form label {
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: #0077cc;
-    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
-    outline: none;
-  }
-
-  .contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-
-  .contact-form button {
-    padding: 0.9rem 1.5rem;
-    background: #0077cc;
-    color: white;
-    font-weight: 700;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .contact-form button:hover {
-    background: #005fa3;
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 600px) {
-    .contact-form {
-      padding: 1.5rem;
-      gap: 1rem;
-    }
-
-    .contact-form button {
-      font-size: 1rem;
-    }
-  }
-</style>
-
-<form action="https://formspree.io/f/xqaqjlyn" method="POST" 
-      class="contact-form" 
-      data-aos="fade-up" 
-      data-aos-delay="100" 
-      data-aos-duration="800">
-
-  <label for="name" data-aos="fade-right" data-aos-delay="150">Name</label>
-  <input type="text" id="name" name="name" required placeholder="Your full name"
-         data-aos="zoom-in" data-aos-delay="200" />
-
-  <label for="email" data-aos="fade-right" data-aos-delay="250">Email</label>
-  <input type="email" id="email" name="_replyto" required placeholder="Your email address"
-         data-aos="zoom-in" data-aos-delay="300" />
-
-  <label for="message" data-aos="fade-right" data-aos-delay="350">Message</label>
-  <textarea id="message" name="message" required placeholder="Write your message here"
-            data-aos="zoom-in" data-aos-delay="400"></textarea>
-
-  
-<!-- Button -->
-<button type="submit" 
-        data-aos="fade-up" 
-        data-aos-delay="500" 
-        data-aos-duration="600"
-        onclick="playVoiceMessage()">
-  Send Message
-</button>
-
-<!-- Hidden Audio -->
-<audio id="voiceAudio" style="display: none;">
-  <source src="https://res.cloudinary.com/dhmixzenl/video/upload/v1747965690/174796566132866995798mur7ij-voicemaker.in-speech_o0vvei.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<!-- AOS Animation Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-
-<!-- Audio Play Script -->
-<script>
-  function playVoiceMessage() {
-    const audio = document.getElementById('voiceAudio');
-    audio.play().catch(error => {
-      console.error('Audio playback failed:', error);
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
-  }
-</script>
-</form>
 
-
-  </div>
-</div>
-</section>
-
- <!-- AOS Script -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      offset: 100,
-      once: false // Animate both on scroll down and scroll up
-    });
+    document.getElementById("year").textContent = String(new Date().getFullYear());
   </script>
-
-
- 
-
 </body>
 </html>
