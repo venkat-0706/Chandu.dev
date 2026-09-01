@@ -59,6 +59,11 @@
                 <a href="#education">Education</a>
                 <a href="#certificates">Certificates</a>
 
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+                    <span class="theme-toggle-icon"><i class="fa-solid fa-sun"></i></span>
+                    <span class="theme-label">Dark</span>
+                </button>
+
                 <a href="#contact" class="nav-contact">
                     Let's Talk
                 </a>
@@ -113,6 +118,16 @@
                 <div class="tech-float database">
                     <i class="fa-solid fa-database"></i>
                     PostgreSQL
+                </div>
+
+                <div class="tech-float react">
+                    <i class="fa-brands fa-react"></i>
+                    React
+                </div>
+
+                <div class="tech-float javascript">
+                    <i class="fa-brands fa-js-square"></i>
+                    JavaScript
                 </div>
 
 
@@ -205,33 +220,22 @@
                 </div>
 
 
-                <!-- Tech Strip -->
-
-                <div class="tech-strip">
-
-                    <span>TECH FOCUS</span>
-
-                    <div>
-
-                        Python
-                        <i class="fa-solid fa-circle"></i>
-
-                        Django
-                        <i class="fa-solid fa-circle"></i>
-
-                        FastAPI
-                        <i class="fa-solid fa-circle"></i>
-
-                        PostgreSQL
-                        <i class="fa-solid fa-circle"></i>
-
-                        React.js
-                        <i class="fa-solid fa-circle"></i>
-
-                        REST API
-
+                <div class="glass-panel skill-stack-panel">
+                    <div class="panel-header">
+                        <span>Core stack</span>
+                        <span class="status-pill"><i class="fa-solid fa-circle"></i> Available</span>
                     </div>
 
+                    <div class="skill-stack" aria-label="Core technology stack">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Django</span>
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">React.js</span>
+                        <span class="skill-pill">JavaScript</span>
+                        <span class="skill-pill">PostgreSQL</span>
+                        <span class="skill-pill">REST APIs</span>
+                        <span class="skill-pill">SQL</span>
+                    </div>
                 </div>
 
             </div>
@@ -261,119 +265,68 @@
 
             <div class="about-grid">
 
-                <div class="about-text">
+                <div class="code-panel glass-panel">
 
-                    <p>
-
-                        I'm a Computer Science Engineering graduate and
-                        aspiring Software Engineer with a strong interest in
-                        backend development, APIs, databases, and system design.
-
-                    </p>
-
-                    <p>
-
-                        My focus is on writing clean, maintainable code and
-                        building applications that solve practical problems.
-                        I continuously improve my skills through projects,
-                        problem-solving, and hands-on development.
-
-                    </p>
-
-
-                    <div class="about-highlights">
-
-
-                        <div class="highlight">
-
-                            <i class="fa-solid fa-code"></i>
-
-                            <div>
-
-                                <h4>Backend Focus</h4>
-
-                                <p>
-                                    APIs, Authentication & Databases
-                                </p>
-
-                            </div>
-
+                    <div class="code-window-header">
+                        <div class="window-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
+                        <span class="window-title">developer_profile.py</span>
+                    </div>
 
+                    <div class="code-window-body">
+                        <pre><code><span class="token keyword">class</span> <span class="token class-name">Developer</span>:
+    <span class="token keyword">def</span> <span class="token function">__init__</span>(<span class="token parameter">self</span>):
+        <span class="token parameter">self</span>.role = <span class="token string">"Python Backend Engineer"</span>
+        <span class="token parameter">self</span>.focus = [
+            <span class="token string">"APIs"</span>,
+            <span class="token string">"Databases"</span>,
+            <span class="token string">"System Design"</span>,
+            <span class="token string">"Product Thinking"</span>
+        ]
+        <span class="token parameter">self</span>.stack = {
+            <span class="token string">"backend"</span>: [<span class="token string">"Python"</span>, <span class="token string">"Django"</span>, <span class="token string">"FastAPI"</span>],
+            <span class="token string">"frontend"</span>: [<span class="token string">"React JS"</span>, <span class="token string">"JavaScript"</span>],
+            <span class="token string">"database"</span>: [<span class="token string">"PostgreSQL"</span>, <span class="token string">"MySQL"</span>]
+        }
 
-                        <div class="highlight">
+    <span class="token keyword">def</span> <span class="token function">build</span>(<span class="token parameter">self</span>):
+        <span class="token keyword">return</span> <span class="token string">"Clean code + scalable systems + product impact"</span></code></pre>
+                    </div>
 
-                            <i class="fa-solid fa-brain"></i>
-
-                            <div>
-
-                                <h4>Problem Solver</h4>
-
-                                <p>
-                                    DSA & Logical Thinking
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="highlight">
-
-                            <i class="fa-solid fa-rocket"></i>
-
-                            <div>
-
-                                <h4>Continuous Learner</h4>
-
-                                <p>
-                                    Always Exploring New Technologies
-                                </p>
-
-                            </div>
-
-                        </div>
-
+                    <div class="code-meta">
+                        <span><i class="fa-solid fa-circle"></i> Experience-driven</span>
+                        <span><i class="fa-solid fa-circle"></i> Problem-first mindset</span>
                     </div>
 
                 </div>
 
-
                 <div class="about-stats">
 
                     <div class="stat-card">
-
-                        <h3>500+</h3>
-
-                        <p>Problems Solved</p>
-
+                        <span class="stat-label">Problems solved</span>
+                        <h3 class="stat-value" data-target="500">0</h3>
+                        <p>+ and counting</p>
                     </div>
 
-
                     <div class="stat-card">
-
-                        <h3>4K+</h3>
-
-                        <p>GitHub Contributions</p>
-
+                        <span class="stat-label">GitHub impact</span>
+                        <h3 class="stat-value" data-target="4000">0</h3>
+                        <p>+ contributions</p>
                     </div>
 
-
                     <div class="stat-card">
-
-                        <h3>200+</h3>
-
-                        <p>SQL Queries Practiced</p>
-
+                        <span class="stat-label">Database depth</span>
+                        <h3 class="stat-value" data-target="200">0</h3>
+                        <p>queries refined</p>
                     </div>
 
-
-                    <div class="stat-card">
-
-                        <h3>2026</h3>
-
-                        <p>Graduate</p>
-
+                    <div class="stat-card accent-card">
+                        <span class="stat-label">Graduate year</span>
+                        <h3 class="stat-value" data-target="2026">0</h3>
+                        <p>Computer Science</p>
                     </div>
 
                 </div>
